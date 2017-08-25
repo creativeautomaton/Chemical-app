@@ -1,0 +1,121 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <ion-icon name="contact" color="dark"></ion-icon> Task Assessments
+    </ion-title>
+
+    <ion-buttons start>
+      <!-- <button ion-button color="primary" >
+        <ion-icon name="search"></ion-icon>
+      </button> -->
+
+      <button ion-button color="secondary" (click)="addAssessment()" >
+        <ion-icon name="add"></ion-icon>
+        Add Assessment
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let assessment of assessments"  class="device-card">
+
+    <ion-card-header>
+      <button ion-item detail-none  >
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <h1 item-left > {{assessment.name}} </h1>
+            </ion-row>
+            <ion-row>
+              <p> <strong> assessment ID#: </strong> {{ assessment.key }} </p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-card-header>
+
+    <ion-card-content class="outer-content">
+      <ion-list>
+        <button ion-item >
+            <ion-row>
+              <ion-col>
+                  <h3> <strong> Location:  </strong> </h3>
+               </ion-col>
+               <ion-col>
+                <p> {{assessment.address}} </p>
+                <p> {{assessment.city}}, {{assessment.state}}. {{assessment.zip}} </p>
+              </ion-col>
+            </ion-row>
+             <ion-row>
+                <ion-col>
+                    <h3> <strong> Map: </strong> </h3>
+                 </ion-col>
+                 <ion-col>
+                      <p>{{assessment.lat}} / {{assessment.lng}}</p>
+                 </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                    <h3> <strong> Last Job: </strong> </h3>
+                </ion-col>
+                <ion-col>
+                   <p>{{assessment.lastJob}} @ {{assessment.time}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                    <h3> <strong> Pets: </strong> </h3>
+                </ion-col>
+                <ion-col>
+                  <ion-row *ngFor="let pet of assessment.pets">
+                       <p><strong> {{pet.name}}: </strong> ( {{pet.type}}) </p>
+                  </ion-row>
+                </ion-col>
+             </ion-row>
+             <ion-row>
+               <ion-col>
+                   <h3> <strong> Chemicals Used: </strong> </h3>
+               </ion-col>
+               <ion-col>
+                 <ion-row *ngFor="let chemical of assessment.chemicals">
+                      <p>Used <strong>{{chemical.name}} </strong> as {{chemical.use}} Every: {{chemical.frequency}}</p>
+                 </ion-row>
+               </ion-col>
+            </ion-row>
+        </button>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-left    >
+          <ion-icon name="calendar"></ion-icon>
+          Next Job
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="primary" icon-left >
+          <ion-icon name='share-alt'></ion-icon>
+         Share
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left >
+          <ion-icon name='remove'></ion-icon>
+          Remove
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!-- <ion-fab right bottom>
+    <button ion-fab color="light" ><ion-icon name="add"></ion-icon></button>
+  </ion-fab> -->
+</ion-content>

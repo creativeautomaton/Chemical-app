@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <ion-icon name="question" color="dark"></ion-icon> FAQs
+    </ion-title>
+
+    <ion-buttons start>
+      <!-- <button ion-button color="primary" >
+        <ion-icon name="search"></ion-icon>
+      </button> -->
+
+      <button ion-button color="secondary" (click)="addFaq()" >
+        <ion-icon name="add"> </ion-icon>
+        Add Question
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let faq of faqs"  class="device-card">
+
+    <ion-card-header>
+      <button ion-item detail-none  >
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <h1 item-left ><strong> Q: </strong>  {{faq.question}} </h1>
+            </ion-row>
+
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-card-header>
+
+    <ion-card-content class="outer-content">
+      <ion-list>
+        <ion-row>
+          <p> <strong> A: </strong> {{ faq.answer }} </p>
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-fab right bottom>
+    <button ion-fab color="light" ><ion-icon name="add"></ion-icon></button>
+  </ion-fab> -->
+</ion-content>

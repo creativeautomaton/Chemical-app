@@ -1,0 +1,24 @@
+page-splash {
+
+  ion-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: 0px;
+    box-shadow: none;
+    overflow: hidden;
+    height: 100px;
+  }
+  .ion-page > ion-content {
+    position: absolute;
+    margin-top: 60px;
+  }
+
+  .splash-ad{
+    position: relative;
+  }
+}

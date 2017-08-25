@@ -1,0 +1,54 @@
+
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h4> Please select the level of location service you desire: </h4>
+
+  <form [formGroup]="searching"  (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label> Crowd-searching </ion-label>
+      <ion-checkbox [(ngModel)]="searching.crowd"  formControlName="crowd" name="crowd" color="dark"  [checked]="!searching.personal" required></ion-checkbox>
+    </ion-item>
+    <ion-card>
+      <ion-card-content>
+        <strong> Free for App members of Hazelwood School District </strong> <br/>
+        Other Hazelwood School District App member smart devices will engage to assist in the location of your Transmitter.
+        Your Hazelwood School District App via your smart device will engage to assist in the location of other member Transmitters.
+        <p>
+          <br/>
+        <strong> What does engage mean? </strong> <br/>
+          When a Transmitter location is requested, a radius of ____ feet is from the Transmitter is assigned
+        and any and all smart devices with the Hazelwood School District App will have their Bluetooth turned on (the App is
+        already running in the background) and turned off when the radius is exceeded.
+        <br/>
+        <br/>
+        <strong> Will other Hazelwood School District App members know when I am searching for one of my Transmitters?</strong>
+          NO.
+      </p>
+      </ion-card-content>
+    </ion-card>
+    <ion-item>
+      <ion-label>Personal-searching Only</ion-label>
+      <ion-checkbox [(ngModel)]="searching.personal" formControlName="personal" name="personal" color="dark"  [checked]="!searching.crowd" required ></ion-checkbox>
+    </ion-item>
+    <ion-card>
+      <ion-card-content>
+         <p>
+          Your Hazelwood School District App will only search for your Transmitter(s) for locations assistance within
+          Bluetooth connectivity range. <br/> <br/> This is an acceptable and effective method for indoor locating of items such
+          as remote control, indoor cat, etc. Items which regularly leave the house, consider Crowd-searching.
+         </p>
+      </ion-card-content>
+    </ion-card>
+
+    <button ion-button [hidden]="!searching.personal"  type="submit" block> Continue </button>
+    <button ion-button [hidden]="!searching.crowd"  type="submit" block> Continue </button>
+    <!-- [disabled]="searching.personal"
+    [disabled]="searching.crowd" -->
+
+  </form>
+</ion-content>

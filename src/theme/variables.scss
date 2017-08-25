@@ -1,0 +1,60 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+// $text-color:        #000;
+// $background-color:  #fff;
+// $headings-font-weight: 300;
+
+$base-color: #00a77a;
+
+$colors: (
+  primary:   #444,
+  secondary: #444,
+  light:    lighten($base-color, 10%),
+  dark:     darken($base-color, 10%),
+  error-msg: darken($base-color, 10%),
+  danger: #327eff
+);
+
+
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+.toast-message {
+  white-space: pre-line;
+  text-align: center;
+}
+
+ // MD Styles
+ .header, .header-md, ion-header{
+   background-color: color($colors, primary) !important;
+   background: color($colors, primary) !important;
+ }
+
+// ion-content,
+// .input-wrapper,
+// .item-inner,
+// .item,
+// ion-footer,
+// ion-item,
+// ion-label {
+//   transition: all 1.1s ease;
+//   background-color: #07ba3c !important;
+//   background: #07ba3c !important;
+//   color: black !important;
+// }
+// ion-list {
+//   background-color: #fff;
+// }
+// .tabs-md .tabbar {
+//     background: #07ba3c;
+// }

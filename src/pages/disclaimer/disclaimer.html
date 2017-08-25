@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Disclaimer page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        Find Me Now App Disclaimer
+      </ion-card-header>
+       <p>
+        Your Hazelwood School District App will only search for your Transmitter(s) for locations assistance within
+        Bluetooth connectivity range. <br/> <br/> This is an acceptable and effective method for indoor locating of items such
+        as remote control, indoor cat, etc. Items which regularly leave the house, consider Crowd-searching.
+       </p>
+    </ion-card-content>
+  </ion-card>
+  <form [formGroup]="disclaimer"  (ngSubmit)="disclaimerForm()">
+    <ion-item>
+      <ion-label>I Accept these terms and Conditions.</ion-label>
+      <ion-checkbox [(ngModel)]="disclaimer.accept" formControlName="accept" name="accept" color="dark" checked="false" required ></ion-checkbox>
+    </ion-item>
+    <button ion-button [disabled]="!disclaimer.valid" type="submit" block> Continue </button>
+  </form>
+</ion-content>
