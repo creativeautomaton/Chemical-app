@@ -12,6 +12,7 @@ import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SplashPage } from '../pages/splash/splash';
 import { PaymentPage } from '../pages/payment/payment';
@@ -66,7 +67,8 @@ export const firebaseConfig = {
     DynamicFormQuestionComponent,
     AssessmentsPage,
     AddChemicalsPage,
-    AddAssessmentPage
+    AddAssessmentPage,
+    DashboardPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp),
@@ -90,7 +92,8 @@ export const firebaseConfig = {
     AddFaqPage,
     ChemicalsPage,
     AssessmentsPage,
-    AddAssessmentPage
+    AddAssessmentPage,
+    DashboardPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  AuthService, AppData, UserData, Storage]
 })

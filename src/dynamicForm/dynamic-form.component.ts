@@ -44,23 +44,10 @@ export class DynamicFormComponent implements OnInit {
     console.log(this.form);
   }
 
-  onSubmit() {
-      this.payLoad = JSON.stringify(this.form.value);
 
-      let formData = this.form.value;
-      let formKey = this.questions[0].key;
-      let formRoot = this.questions[0].value;
-      formRootCheck(formRoot, formData, formKey );
-      console.log(formData);
-  }
 
   formRootCheck(formRoot, formData, formKey ){
-      if(formRoot = true){
-        this.sendFirebaseRoot(formData, formKey);
-      }
-      if(formRoot = false){
         this.sendFirebaseUser(formData, formKey);
-      }
   }
 
   sendFirebaseRoot(formData, formKey){
@@ -118,5 +105,15 @@ export class DynamicFormComponent implements OnInit {
             });
      });
   }
+  onSubmit() {
+      this.payLoad = JSON.stringify(this.form.value);
+
+      let formData = this.form.value;
+      let formKey = this.questions[0].key;
+      let formRoot = this.questions[0].value;
+
+      this.formRootCheck(formRoot, formData, formKey );
+            console.log(formData);
+   }
 
 }

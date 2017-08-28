@@ -154,7 +154,7 @@ export class AssessmentQuestionService {
         }),
 
       new TextboxQuestion({
-        key: 'assessmentTitle',
+        key: 'Title',
         label: 'Task Title',
         value: ' ',
         required: true,
@@ -162,7 +162,7 @@ export class AssessmentQuestionService {
       }),
 
       new TextboxQuestion({
-        key: 'assessmentProcessTitle',
+        key: 'ProcessTitle',
         label: 'Process Title',
         value: ' ',
         required: false,
@@ -170,7 +170,7 @@ export class AssessmentQuestionService {
       }),
 
       new TextboxQuestion({
-        key: 'assessmentLocation',
+        key: 'Location',
         label: 'Location',
         value: ' ',
         required: false,
@@ -178,7 +178,7 @@ export class AssessmentQuestionService {
       }),
 
       new TextboxQuestion({
-        key: 'assessmentRiskAssesor',
+        key: 'RiskAssesor',
         label: 'Risk Assesor',
         value: ' ',
         required: false,
@@ -186,7 +186,7 @@ export class AssessmentQuestionService {
       }),
 
       new TextboxQuestion({
-        key: 'assessmentDescription',
+        key: 'Description',
         label: 'What is the Task being Assesed?',
         value: ' ',
         required: false,
@@ -209,7 +209,7 @@ export class AssessmentQuestionService {
       }),
 
       new TextboxQuestion({
-        key: 'assessmentHazardousSubstances',
+        key: 'HazardousSubstances',
         label: 'What hazardous substances are being used in this task?',
         value: ' ',
         required: false,

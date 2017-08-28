@@ -8,10 +8,10 @@
 
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" color="light"></ion-icon>
     </button>
     <ion-title>
-      <ion-icon name="water" color="dark"></ion-icon> Chemicals
+      <ion-icon name="water" color="light"></ion-icon> Chemicals
     </ion-title>
 
     <ion-buttons start>
@@ -19,8 +19,8 @@
         <ion-icon name="search"></ion-icon>
       </button> -->
 
-      <button ion-button color="secondary" (click)="addCustomerButton()" >
-        <ion-icon name="add"></ion-icon>
+      <button ion-button color="light" (click)="addCustomerButton()" >
+        <ion-icon name="add" color="light" ></ion-icon>
         Add Chemical
       </button>
     </ion-buttons>
@@ -98,18 +98,6 @@
     </ion-card-content>
 
     <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="primary" icon-left    >
-          <ion-icon name="calendar"></ion-icon>
-          Next Job
-        </button>
-      </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="primary" icon-left >
-          <ion-icon name='share-alt'></ion-icon>
-         Share
-        </button>
-      </ion-col>
       <ion-col text-right>
         <button ion-button clear small color="primary" icon-left >
           <ion-icon name='remove'></ion-icon>

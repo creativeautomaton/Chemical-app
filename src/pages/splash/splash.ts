@@ -37,7 +37,7 @@ export class SplashPage {
 
 
   continueButton() {
-    this.navCtrl.push(TabsPage, { tabIndex: 1});
+    this.navCtrl.push(TabsPage, { tabIndex: 0});
   }
 
 

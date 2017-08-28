@@ -3,6 +3,8 @@ import { Component, ViewChild, Inject } from '@angular/core';
 import { Events, MenuController, Nav, Platform, ToastController, ModalController } from 'ionic-angular';
 import { BackgroundMode, Splashscreen, StatusBar } from 'ionic-native';
 
+import { DashboardPage } from '../pages/dashboard/dashboard';
+
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -51,6 +53,7 @@ export class ConferenceApp {
     // { title: 'FAQs', component: FaqPage, icon: 'list-box' }
   ];
   loggedInPages: PageInterface[] = [
+    { title: 'Dashboard', component: DashboardPage, icon: 'list-box' },
     { title: 'Chemicals', component: ChemicalsPage, icon: 'water' },
     { title: 'Assessments', component: AssessmentsPage, icon: 'list-box' },
     { title: 'Account', component: AccountPage, icon: 'person' },

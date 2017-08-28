@@ -2,6 +2,31 @@
 // http://ionicframework.com/docs/v2/theming/
 @import "ionic.globals";
 
+
+$grid-breakpoints: (
+  sm: 0,
+  md: 768px,
+  lg: 1024px
+);
+
+$grid-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 960px
+);
+
+$grid-columns:               12 !default;
+
+$grid-padding-width:         10px !default;
+
+$grid-padding-widths: (
+  xs: $grid-padding-width,
+  sm: $grid-padding-width,
+  md: $grid-padding-width,
+  lg: $grid-padding-width,
+  xl: $grid-padding-width
+) !default;
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -13,18 +38,16 @@
 // $background-color:  #fff;
 // $headings-font-weight: 300;
 
-$base-color: #00a77a;
+$base-color: #666;
 
 $colors: (
   primary:   #444,
   secondary: #444,
-  light:    lighten($base-color, 10%),
+  light:    lighten($base-color, 50%),
   dark:     darken($base-color, 10%),
   error-msg: darken($base-color, 10%),
   danger: #327eff
 );
-
-
 
 $ionicons-font-path: "../assets/fonts";
 @import "ionicons";
@@ -35,10 +58,27 @@ $ionicons-font-path: "../assets/fonts";
 }
 
  // MD Styles
- .header, .header-md, ion-header{
-   background-color: color($colors, primary) !important;
-   background: color($colors, primary) !important;
- }
+ // .header, .header-md, ion-header{
+ //   background-color: color($colors, primary) !important;
+ //   background: color($colors, primary) !important;
+ // }
+.content-md {
+    color: #fff;
+    background-color: #b8c39c;
+}
+.toolbar-title-md {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff !important;
+}
+
+.toolbar-background-md {
+    color: #fff !important;
+    border-color: #333 !important;
+    background: #444 !important;
+}
+
 
 // ion-content,
 // .input-wrapper,

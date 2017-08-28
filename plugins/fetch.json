@@ -91,5 +91,14 @@
             "APP_ID": "360761797618849",
             "APP_NAME": "findmenow"
         }
+    },
+    "cordova-plugin-printer": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/katzer/cordova-plugin-printer.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
