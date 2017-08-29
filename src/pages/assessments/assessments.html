@@ -22,7 +22,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <ion-card *ngFor="let assessment of assessments"  class="device-card">
 
@@ -45,58 +44,76 @@
 
     <ion-card-content class="outer-content">
       <ion-list>
-        <button ion-item padding >
-            <ion-row>
-              <ion-col>
-                  <h3> <strong> Process Title:  </strong> </h3>
-               </ion-col>
-               <ion-col>
-                <p> {{assessment.ProcessTitle }} </p>
-              </ion-col>
-            </ion-row>
-             <ion-row>
+
+        <ion-grid>
+           <ion-row>
+              <ion-col col-sm-12 col-lg-4>
+                  <button ion-item padding col-md>
+                      <ion-row>
+                        <ion-col>
+                            <h3> <strong> Process Title:  </strong> </h3>
+                         </ion-col>
+                         <ion-col>
+                          <p> {{assessment.ProcessTitle }} </p>
+                        </ion-col>
+                      </ion-row>
+                    </button>
+                </ion-col>
+                <ion-col col-sm-12 col-lg-4>
+                    <button ion-item padding col-md>
+                       <ion-row>
+                          <ion-col>
+                              <h3> <strong> Location: </strong> </h3>
+                           </ion-col>
+                           <ion-col>
+                                <p>{{assessment.Location}}</p>
+                           </ion-col>
+                        </ion-row>
+                      </button>
+                  </ion-col>
+                <ion-col col-sm-12 col-lg-4>
+                    <button ion-item padding col-md>
+                       <ion-row>
+                          <ion-col>
+                              <h3> <strong> Risk Assesor: </strong> </h3>
+                           </ion-col>
+                           <ion-col>
+                                <p>{{assessment.RiskAssesor}}</p>
+                           </ion-col>
+                       </ion-row>
+                    </button>
+                </ion-col>
                 <ion-col>
-                    <h3> <strong> Location: </strong> </h3>
-                 </ion-col>
-                 <ion-col>
-                      <p>{{assessment.Location}}</p>
-                 </ion-col>
+                    <button ion-item padding col-md>
+                    <ion-row>
+                       <ion-col>
+                           <h3> <strong> Description: </strong> </h3>
+                        </ion-col>
+                        <ion-col>
+                             <p>{{assessment.Description}}</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                       <ion-col>
+                           <h3> <strong> Persons Effected: </strong> </h3>
+                        </ion-col>
+                        <ion-col>
+                             <p>{{assessment.peopleEffected}}</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                       <ion-col>
+                           <h3> <strong> Hazardous Substances: </strong> </h3>
+                        </ion-col>
+                        <ion-col>
+                             <p>{{assessment.HazardousSubstances}}</p>
+                        </ion-col>
+                    </ion-row>
+                </button>
+                </ion-col>
               </ion-row>
-             <ion-row>
-                <ion-col>
-                    <h3> <strong> Risk Assesor: </strong> </h3>
-                 </ion-col>
-                 <ion-col>
-                      <p>{{assessment.RiskAssesor}}</p>
-                 </ion-col>
-             </ion-row>
-            <ion-row>
-               <ion-col>
-                   <h3> <strong> Description: </strong> </h3>
-                </ion-col>
-                <ion-col>
-                     <p>{{assessment.Description}}</p>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-               <ion-col>
-                   <h3> <strong> Persons Effected: </strong> </h3>
-                </ion-col>
-                <ion-col>
-                     <p>{{assessment.peopleEffected}}</p>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-               <ion-col>
-                   <h3> <strong> Hazardous Substances: </strong> </h3>
-                </ion-col>
-                <ion-col>
-                     <p>{{assessment.HazardousSubstances}}</p>
-                </ion-col>
-            </ion-row>
+          </ion-grid>
 
-
-        </button>
       </ion-list>
     </ion-card-content>
 
