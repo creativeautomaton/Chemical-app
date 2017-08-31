@@ -1,6 +1,6 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <ion-list>
-      <div *ngFor="let question of questions">
+      <div *ngFor="let question of questions" >
         <df-question [question]="question" [form]="form"></df-question>
       </div>
       <ion-item>

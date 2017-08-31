@@ -605,48 +605,500 @@ export class AssessmentQuestionService {
           }),
           new TextboxQuestion({
             key: 'metalType',
-            label: 'Type of Metal Being Welded(Will Enter More at a Later Time) <Enter>:',
+            label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
             value: ' ',
             required: false,
             order: 2
           }),
           new TextboxQuestion({
-            key: 'exposurePerDay',
-            label: 'Duration of Exposure Per Day:',
+            key: 'materialThickness',
+            label: 'Thickness of the material (inches):',
             value: ' ',
             required: false,
             order: 2
           }),
           new TextboxQuestion({
-            key: 'exposurePerDay',
-            label: 'Duration of Exposure Per Day:',
+            key: 'weldAreaWidth',
+            label: 'Width of weld area (inches):',
             value: ' ',
             required: false,
             order: 2
           }),
           new TextboxQuestion({
-            key: 'exposurePerDay',
-            label: 'Duration of Exposure Per Day:',
+            key: 'weldAreaHeight',
+            label: 'Length of weld area (inches):',
+            value: ' ',
+            required: false,
+            order: 2
+          }),
+          new TextboxQuestion({
+            key: 'pipeDiameter',
+            label: 'Pipe Diameter (inches):',
+            value: ' ',
+            required: false,
+            order: 2
+          }),
+          new TextboxQuestion({
+            key: 'WeldPasses',
+            label: 'Number of Passes:',
+            value: ' ',
+            required: false,
+            order: 2
+          }),
+          new TextboxQuestion({
+            key: 'weldAmperage',
+            label: 'Welding Machine Amperage:',
+            value: ' ',
+            required: false,
+            order: 2
+          }),
+          new TextboxQuestion({
+            key: 'weldOther',
+            label: 'Other:',
             value: ' ',
             required: false,
             order: 2
           }),
 
+      // Chemical Risk Ranking
+        new TextboxQuestion({
+          key: 'riskChemicalName',
+          label: 'Chemical Name:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskChemicalID',
+          label: 'Chemical/Manf. ID:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskFlashPoint',
+          label: 'Flash Point:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskVaporPressure',
+          label: 'Vapor Pressure:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskEvaporationRate',
+          label: 'Evaporation Rate:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskPH',
+          label: 'pH:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'riskHealthHazard',
+          label: 'Health Hazard:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
 
-      // new CheckboxQuestion({
-      //   key: 'peopleEffected',
-      //   label: 'Who are the people affected by this task? ',
-      //   options: [
-      //     {key: 'operator',  value: 'Operator'},
-      //     {key: 'employees',  value: 'Employees'},
-      //     {key: 'visitors',   value: 'Visitors'},
-      //     {key: 'expectant-mothers',  value: 'New and expectant mothers'},
-      //     {key: 'disabled',  value: 'Disabled'},
-      //     {key: 'visitors',   value: 'Visitors'},
-      //     {key: 'contractors', value: 'Contractors'}
-      //   ],
-      //   order: 3
-      // }),
+    // Constituent Risk Ranking
+        new TextboxQuestion({
+          key: 'constituentChemicalName',
+          label: 'Chemical Name:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentCAS',
+          label: 'CAS#:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentChemicalID',
+          label: 'Chemical/Manf. ID:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentFlashPoint',
+          label: 'Flash Point:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentVaporPressure',
+          label: 'Vapor Pressure:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentEvaporationRate',
+          label: 'Evaporation Rate:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentPH',
+          label: 'pH:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentGasVapor',
+          label: 'Gas and Vapor:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentMistParticulate',
+          label: 'Mist/Particulate:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'constituentHealthHazard',
+          label: 'Health Hazard:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+    // Task Risk Ranking
+        new TextboxQuestion({
+          key: 'taskWorkSite',
+          label: 'Work Site:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'taskSpaceVolume',
+          label: 'Space Volume:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'taskExposureFrequency',
+          label: 'Frequency of Exposure:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'taskDuration',
+          label: 'Duration:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'taskType',
+          label: 'Task Type:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+    // Local Exhaust Ventilation
+        new DropdownQuestion({
+          key: 'localExhaustVentilation',
+          label: 'Who are the people affected by this task? ',
+          options: [
+            {key: '0',  value: 'Slot Hood Without Flange'},
+            {key: '1',  value: 'Slot Hood With Flange'},
+            {key: '2',   value: 'Plain Opening Hood'},
+            {key: '3',  value: 'Plain Multiple Slot Hood'},
+            {key: '4',  value: 'Flange Multiple Slot Hood'},
+            {key: '5',   value: 'Canopy Hood'},
+            {key: '6', value: 'Booth'}
+          ],
+          order: 3
+        }),
+        new TextboxQuestion({
+          key: 'dilutionVentSize',
+          label: 'Size:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'dilutionHoodCaptureVelocity',
+          label: 'Hood Capture Velocity:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'dilutionHoodFlowRate',
+          label: 'Hood Flow Rate:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'dilutionDuctVelocity',
+          label: 'Duct Velocity:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+    // General Dilution
+        new TextboxQuestion({
+          key: 'dilutionAirChangesperHour',
+          label: 'Recommended Air Changes per Hour:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+    // Protective Gloves
+        new DropdownQuestion({
+          key: 'protectiveGloveType',
+          label: 'Chosen Glove',
+          options: [
+            {key: '0',  value: 'Butyl Rubber'},
+            {key: '1',  value: 'Natural Rubber'},
+            {key: '2',   value: 'Neoprene Rubber'},
+            {key: '3',  value: 'Nitrile Rubber'},
+            {key: '4',  value: 'Polyethylene (PE)'},
+            {key: '5',   value: 'Polyvinylalcohol (PVAL)'},
+            {key: '6',   value: 'Polyvinylchloride (PVC)'},
+            {key: '7',   value: 'Viton ®'},
+            {key: '8',   value: 'Viton ®/Butyl'},
+            {key: '9',   value: 'Barrier ® (PE/PA/PE'},
+            {key: '10', value: 'Silver Shield/4H'}
+          ],
+          order: 3
+        }),
+        new TextboxQuestion({
+          key: 'protectiveGloveCAS',
+          label: 'CAS#:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'protectiveGloveConstituent',
+          label: 'Constituent:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+    // Protective Clothing
+        new DropdownQuestion({
+          key: 'protectiveClothingType',
+          label: 'Chosen protective Clothing',
+          options: [
+            {key: '0',  value: 'Trellchem®HPS'},
+            {key: '1',  value: 'Trellchem®VPS'},
+            {key: '2',   value: 'Tychem® QC'},
+            {key: '3',  value: 'Tychem® SL (Saranex®)'},
+            {key: '4',  value: 'Tychem® TF'},
+            {key: '5',   value: 'Tychem® TP'},
+            {key: '6',   value: 'Tychem® C3'},
+            {key: '7',   value: 'Tychem® RC'},
+            {key: '8',   value: 'Tychem® TR'},
+            {key: '9',   value: 'Tychem® RF'},
+            {key: '10', value: 'Tychem® CPF3'},
+            {key: '11',   value: 'Tychem® F'},
+            {key: '12',   value: 'Tychem® BR/LV'},
+            {key: '13',   value: 'Tychem® Responder'},
+            {key: '14',   value: 'Tychem® TK'},
+            {key: '15',   value: 'Tychem® TF'}
+          ],
+          order: 3
+        }),
+        new TextboxQuestion({
+          key: 'protectiveClothingCAS',
+          label: 'CAS#:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'protectiveClothingConstituent',
+          label: 'Constituent:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+
+    // Respiratory Protection
+        new DropdownQuestion({
+          key: 'RespiratorType',
+          label: 'Chosen Respirator Type',
+          options: [
+            {key: '0',  value: 'Air Purifying Respirator'},
+            {key: '1',  value: 'Powered Air Purifying Respirator	'},
+            {key: '2',   value: 'Supplied Air'}
+          ],
+          order: 3
+        }),
+        new DropdownQuestion({
+          key: 'Respirator',
+          label: 'Chosen Respirator',
+          options: [
+            {key: '0',  value: 'Quarter Dust Mask'},
+            {key: '1',  value: 'Half Face'},
+            {key: '2',   value: 'Full Face'},
+            {key: '3',  value: 'Helmet/Hood'},
+            {key: '4',  value: 'Half Face Continuous Flow/Pressure Demand'},
+            {key: '5',   value: 'Full Face Continuous Flow/Pressure Demand'},
+            {key: '6',   value: 'Helmet / Hood Continuous Flow'},
+            {key: '7',   value: 'SCBA'}
+          ],
+          order: 3
+        }),
+        new TextboxQuestion({
+          key: 'RespiratorCAS',
+          label: 'CAS#:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'RespiratorConstituent',
+          label: 'Constituent:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
+   // Direct Reading Exposure Monitoring
+         new TextboxQuestion({
+           key: 'DREMCAS',
+           label: 'CAS #:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREMConstituent',
+           label: 'Constituent:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREMIonizationPotential',
+           label: 'Ionization Potential:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_PIDCF',
+           label: 'PID CF:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_LFL',
+           label: 'LFL:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_UFL',
+           label: 'UFL:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_LEL_CF',
+           label: 'LEL CF:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_ColorimetricTubeChip',
+           label: 'Colorimetric Tube/Chip:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+         new TextboxQuestion({
+           key: 'DREM_Other',
+           label: 'Other:',
+           value: ' ',
+           required: false,
+           order: 2
+         }),
+
+
+    // Exposure Data
+        new TextboxQuestion({
+          key: 'exposureDataCAS',
+          label: 'CAS #:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'exposureDataConstituent',
+          label: 'Constituent:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'exposureDataModeledExposureResults',
+          label: 'Modeled Exposure Results:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'exposureDataPredictiveExposureResults',
+          label: 'Predictive Exposure Results:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+        new TextboxQuestion({
+          key: 'exposureDataObjectiveDataExposureResults',
+          label: 'Objective Data Exposure Results:',
+          value: ' ',
+          required: false,
+          order: 2
+        }),
+
+
       //
       // new TextboxQuestion({
       //   key: 'HazardousSubstances',

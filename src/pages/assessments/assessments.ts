@@ -18,6 +18,7 @@ export class AssessmentsPage {
     assessments:  any[];
     keys:  any[];
     mine: boolean = true;
+    // shownGroup = null;
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
@@ -57,4 +58,15 @@ export class AssessmentsPage {
      });
       modal.present();
     }
+
+    // toggleGroup(group) {
+    //     if (this.isGroupShown(group)) {
+    //         this.shownGroup = null;
+    //     } else {
+    //         this.shownGroup = group;
+    //     }
+    // }
+    // isGroupShown(group) {
+    //     return this.shownGroup === group;
+    // }
 }
