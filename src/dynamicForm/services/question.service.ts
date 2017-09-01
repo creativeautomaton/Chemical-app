@@ -5,7 +5,7 @@ import { CheckboxQuestion } from '../models/question-checkbox';
 import { RangeQuestion } from '../models/question-range';
 import { QuestionBase }     from '../models/question-base';
 import { TextboxQuestion }  from '../models/question-textbox';
-
+import { AccordianQuestion }  from '../models/question-accordian';
 
 @Injectable()
 export class ChemicalQuestionService {
@@ -152,6 +152,8 @@ export class AssessmentQuestionService {
           key: 'assessments',
           value: 'false'
         }),
+
+     
 
       new TextboxQuestion({
         key: 'Title',
