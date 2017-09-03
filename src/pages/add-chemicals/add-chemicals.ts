@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { ChemicalQuestionService } from '../../dynamicForm/services/question.service';
 
 @Component({
@@ -10,11 +10,17 @@ import { ChemicalQuestionService } from '../../dynamicForm/services/question.ser
 export class AddChemicalsPage {
    questions: any[];
 
-  constructor(public navCtrl: NavController, service: ChemicalQuestionService) {
+  constructor(
+    public viewCtrl: ViewController,
+    public navCtrl: NavController,
+    service: ChemicalQuestionService
+  ) {
     service.getChemicalQuestions().then(questions => this.questions = questions);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddChemicalsPage');
   }
-
+   dismiss() {
+      this.viewCtrl.dismiss();
+  }
 }

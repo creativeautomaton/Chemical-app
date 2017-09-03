@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { AssessmentQuestionService } from '../../dynamicForm/services/question.service';
 
 @Component({
@@ -10,11 +10,18 @@ import { AssessmentQuestionService } from '../../dynamicForm/services/question.s
 export class AddAssessmentPage {
   questions: any[];
 
-  constructor(public navCtrl: NavController, service: AssessmentQuestionService) {
+  constructor(
+      public viewCtrl: ViewController,
+      public navCtrl: NavController,
+      service: AssessmentQuestionService
+  ) {
     service.getAssessmentQuestions().then(questions => this.questions = questions);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddAssessmentPage');
+  }
+   dismiss() {
+      this.viewCtrl.dismiss();
   }
 
 }

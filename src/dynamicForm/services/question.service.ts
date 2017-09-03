@@ -153,7 +153,7 @@ export class AssessmentQuestionService {
           value: 'false'
         }),
 
-     
+
 
       new TextboxQuestion({
         key: 'Title',
@@ -169,7 +169,8 @@ export class AssessmentQuestionService {
         label: 'Company',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'User Information'
       }),
       new TextboxQuestion({
         key: 'department',
@@ -212,7 +213,8 @@ export class AssessmentQuestionService {
         label: 'Chemical Name (SDS):',
         value: ' ',
         required: true,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'chemicalManufacturer',
@@ -341,7 +343,8 @@ export class AssessmentQuestionService {
         label: 'CAS#:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Constituents Table'
       }),
       new TextboxQuestion({
         key: 'constituentName',
@@ -371,7 +374,8 @@ export class AssessmentQuestionService {
         label: 'ACGIH TLV:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits '
       }),
       new TextboxQuestion({
         key: 'ACGIH_STEL',
@@ -487,7 +491,8 @@ export class AssessmentQuestionService {
         label: 'Work Site:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'No_of_Workers',
@@ -603,7 +608,8 @@ export class AssessmentQuestionService {
             label: 'Generation Rate (rods/hour) :',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'metalType',
@@ -668,7 +674,8 @@ export class AssessmentQuestionService {
           label: 'Chemical Name:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskChemicalID',
@@ -719,7 +726,8 @@ export class AssessmentQuestionService {
           label: 'Chemical Name:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentCAS',
@@ -792,7 +800,8 @@ export class AssessmentQuestionService {
           label: 'Work Site:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Task Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'taskSpaceVolume',
@@ -827,17 +836,18 @@ export class AssessmentQuestionService {
     // Local Exhaust Ventilation
         new DropdownQuestion({
           key: 'localExhaustVentilation',
-          label: 'Who are the people affected by this task? ',
+          label: 'Local Exhaust Ventilation Types ',
           options: [
-            {key: '0',  value: 'Slot Hood Without Flange'},
-            {key: '1',  value: 'Slot Hood With Flange'},
-            {key: '2',   value: 'Plain Opening Hood'},
-            {key: '3',  value: 'Plain Multiple Slot Hood'},
-            {key: '4',  value: 'Flange Multiple Slot Hood'},
-            {key: '5',   value: 'Canopy Hood'},
-            {key: '6', value: 'Booth'}
+            {key: 'Slot Hood Without Flange',  value: 'Slot Hood Without Flange'},
+            {key: 'Slot Hood With Flange',  value: 'Slot Hood With Flange'},
+            {key: 'Plain Opening Hood',   value: 'Plain Opening Hood'},
+            {key: 'Plain Multiple Slot Hood',  value: 'Plain Multiple Slot Hood'},
+            {key: 'Flange Multiple Slot Hood',  value: 'Flange Multiple Slot Hood'},
+            {key: 'Canopy Hood',   value: 'Canopy Hood'},
+            {key: 'Booth', value: 'Booth'}
           ],
-          order: 3
+          order: 3,
+          section: 'Local Exhaust Ventilation'
         }),
         new TextboxQuestion({
           key: 'dilutionVentSize',
@@ -875,28 +885,30 @@ export class AssessmentQuestionService {
           label: 'Recommended Air Changes per Hour:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Dilution'
         }),
 
 
     // Protective Gloves
         new DropdownQuestion({
           key: 'protectiveGloveType',
-          label: 'Chosen Glove',
+          label: 'Chosen Protective Glove',
           options: [
-            {key: '0',  value: 'Butyl Rubber'},
-            {key: '1',  value: 'Natural Rubber'},
-            {key: '2',   value: 'Neoprene Rubber'},
-            {key: '3',  value: 'Nitrile Rubber'},
-            {key: '4',  value: 'Polyethylene (PE)'},
-            {key: '5',   value: 'Polyvinylalcohol (PVAL)'},
-            {key: '6',   value: 'Polyvinylchloride (PVC)'},
-            {key: '7',   value: 'Viton ®'},
-            {key: '8',   value: 'Viton ®/Butyl'},
-            {key: '9',   value: 'Barrier ® (PE/PA/PE'},
-            {key: '10', value: 'Silver Shield/4H'}
+            {key: 'Butyl Rubber',  value: 'Butyl Rubber'},
+            {key: 'Natural Rubber',  value: 'Natural Rubber'},
+            {key: 'Neoprene Rubber',   value: 'Neoprene Rubber'},
+            {key: 'Nitrile Rubber',  value: 'Nitrile Rubber'},
+            {key: 'Polyethylene (PE)',  value: 'Polyethylene (PE)'},
+            {key: 'Polyvinylalcohol (PVAL)',   value: 'Polyvinylalcohol (PVAL)'},
+            {key: 'Polyvinylchloride (PVC)',   value: 'Polyvinylchloride (PVC)'},
+            {key: 'Viton ®',   value: 'Viton ®'},
+            {key: 'Viton ®/Butyl',   value: 'Viton ®/Butyl'},
+            {key: 'Barrier ® (PE/PA/PE',   value: 'Barrier ® (PE/PA/PE'},
+            {key: 'Silver Shield/4H', value: 'Silver Shield/4H'}
           ],
-          order: 3
+          order: 3,
+          section: 'Protective Gloves'
         }),
         new TextboxQuestion({
           key: 'protectiveGloveCAS',
@@ -919,24 +931,25 @@ export class AssessmentQuestionService {
           key: 'protectiveClothingType',
           label: 'Chosen protective Clothing',
           options: [
-            {key: '0',  value: 'Trellchem®HPS'},
-            {key: '1',  value: 'Trellchem®VPS'},
-            {key: '2',   value: 'Tychem® QC'},
-            {key: '3',  value: 'Tychem® SL (Saranex®)'},
-            {key: '4',  value: 'Tychem® TF'},
-            {key: '5',   value: 'Tychem® TP'},
-            {key: '6',   value: 'Tychem® C3'},
-            {key: '7',   value: 'Tychem® RC'},
-            {key: '8',   value: 'Tychem® TR'},
-            {key: '9',   value: 'Tychem® RF'},
-            {key: '10', value: 'Tychem® CPF3'},
-            {key: '11',   value: 'Tychem® F'},
-            {key: '12',   value: 'Tychem® BR/LV'},
-            {key: '13',   value: 'Tychem® Responder'},
-            {key: '14',   value: 'Tychem® TK'},
-            {key: '15',   value: 'Tychem® TF'}
+            {key: 'Trellchem®HPS',  value: 'Trellchem®HPS'},
+            {key: 'Trellchem®VPS',  value: 'Trellchem®VPS'},
+            {key: 'Tychem® QC',   value: 'Tychem® QC'},
+            {key: 'Tychem® SL (Saranex®)',  value: 'Tychem® SL (Saranex®)'},
+            {key: 'Tychem® TF',  value: 'Tychem® TF'},
+            {key: 'Tychem® TP',   value: 'Tychem® TP'},
+            {key: 'Tychem® C3',   value: 'Tychem® C3'},
+            {key: 'Tychem® RC',   value: 'Tychem® RC'},
+            {key: 'Tychem® TR',   value: 'Tychem® TR'},
+            {key: 'Tychem® RF',   value: 'Tychem® RF'},
+            {key: 'Tychem® CPF3', value: 'Tychem® CPF3'},
+            {key: 'Tychem® F',   value: 'Tychem® F'},
+            {key: 'Tychem® BR/LV',   value: 'Tychem® BR/LV'},
+            {key: 'Tychem® Responder',   value: 'Tychem® Responder'},
+            {key: 'Tychem® TK',   value: 'Tychem® TK'},
+            {key: 'Tychem® TF',   value: 'Tychem® TF'}
           ],
-          order: 3
+          order: 3,
+          section: 'Protective Clothing'
         }),
         new TextboxQuestion({
           key: 'protectiveClothingCAS',
@@ -960,24 +973,25 @@ export class AssessmentQuestionService {
           key: 'RespiratorType',
           label: 'Chosen Respirator Type',
           options: [
-            {key: '0',  value: 'Air Purifying Respirator'},
-            {key: '1',  value: 'Powered Air Purifying Respirator	'},
-            {key: '2',   value: 'Supplied Air'}
+            {key: 'Air Purifying Respirator',  value: 'Air Purifying Respirator'},
+            {key: 'Powered Air Purifying Respirator',  value: 'Powered Air Purifying Respirator	'},
+            {key: 'Supplied Air',   value: 'Supplied Air'}
           ],
-          order: 3
+          order: 3,
+          section: 'Respirator Protection'
         }),
         new DropdownQuestion({
           key: 'Respirator',
           label: 'Chosen Respirator',
           options: [
-            {key: '0',  value: 'Quarter Dust Mask'},
-            {key: '1',  value: 'Half Face'},
-            {key: '2',   value: 'Full Face'},
-            {key: '3',  value: 'Helmet/Hood'},
-            {key: '4',  value: 'Half Face Continuous Flow/Pressure Demand'},
-            {key: '5',   value: 'Full Face Continuous Flow/Pressure Demand'},
-            {key: '6',   value: 'Helmet / Hood Continuous Flow'},
-            {key: '7',   value: 'SCBA'}
+            {key: 'Quarter Dust Mask',  value: 'Quarter Dust Mask'},
+            {key: 'Half Face',  value: 'Half Face'},
+            {key: 'Full Face',   value: 'Full Face'},
+            {key: 'Helmet/Hood',  value: 'Helmet/Hood'},
+            {key: 'Half Face Continuous Flow/Pressure Demand',  value: 'Half Face Continuous Flow/Pressure Demand'},
+            {key: 'Full Face Continuous Flow/Pressure Demand',   value: 'Full Face Continuous Flow/Pressure Demand'},
+            {key: 'Helmet / Hood Continuous Flow',   value: 'Helmet / Hood Continuous Flow'},
+            {key: 'SCBA',   value: 'SCBA'}
           ],
           order: 3
         }),
@@ -1003,7 +1017,8 @@ export class AssessmentQuestionService {
            label: 'CAS #:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREMConstituent',
@@ -1069,7 +1084,8 @@ export class AssessmentQuestionService {
           label: 'CAS #:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Exposure Data'
         }),
         new TextboxQuestion({
           key: 'exposureDataConstituent',
