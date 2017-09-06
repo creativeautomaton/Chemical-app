@@ -156,7 +156,7 @@ export class AssessmentQuestionService {
 
 
       new TextboxQuestion({
-        key: 'Title',
+        key: 'title',
         label: 'Task Title',
         value: ' ',
         required: true,
