@@ -54,9 +54,13 @@ export class ConferenceApp {
   ];
   loggedInPages: PageInterface[] = [
     { title: 'Dashboard', component: DashboardPage, icon: 'list-box' },
+
     { title: 'Chemicals', component: ChemicalsPage, icon: 'water' },
+    { title: 'New Assessment', component: AssessmentsPage, icon: 'add' },
+    { title: 'Constituent Table', component: AssessmentsPage, icon: 'add' },
+
     { title: 'Assessments', component: AssessmentsPage, icon: 'list-box' },
-    { title: 'Account', component: AccountPage, icon: 'person' },
+    // { title: 'Account', component: AccountPage, icon: 'person' },
     { title: 'Logout', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [

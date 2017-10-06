@@ -1,42 +1,43 @@
-<div [ngSwitch]="question.controlType">
-  <ion-item *ngSwitchCase="'textbox'" [formGroup]="form">
-    <ion-label floating>{{question.label}}</ion-label>
-    <ion-input [formControlName]="question.key"
-        [id]="question.key" [type]="question.type">
-    </ion-input>
-  </ion-item>
+<div [ngSwitch]="question.controlType" >
 
-  <ion-item *ngSwitchCase="'dropdown'"  [formGroup]="form">
-    <ion-label floating>{{question.label}}</ion-label>
-    <ion-select [formControlName]="question.key" [id]="question.key" >
-        <ion-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-list *ngSwitchCase="'checkbox'"  [formGroup]="form">
+      <ion-item *ngSwitchCase="'textbox'" [formGroup]="form">
         <ion-label floating>{{question.label}}</ion-label>
-        <ion-item *ngFor="let opt of question.options" >
-            <ion-label> {{opt.value}}</ion-label>
-            <ion-checkbox checked="false" [formControlName]="question.key"></ion-checkbox>
-            <ion-note item-right>
-                {{opt.value}}
-            </ion-note>
+        <ion-input [formControlName]="question.key"
+            [id]="question.key" [type]="question.type">
+        </ion-input>
       </ion-item>
-  </ion-list>
 
-   <ion-list *ngSwitchCase="'range'"  [formGroup]="form">
-        <ion-label floating> {{question.label}} </ion-label>
-         <ion-item *ngFor="let opt of question.options" >
-            <ion-label floating> {{opt.label}}</ion-label>
-            <ion-range [formControlName]="question.key" min="{{opt.min}}" max="{{opt.max}}" step="{{opt.step}}"  snaps="true" color="danger" pin="true">
-                <ion-icon range-left small color="primary" name="water">{{opt.min}}</ion-icon>
-                <ion-icon range-right color="secondary" name="water">{{opt.max}}</ion-icon>
-            </ion-range>
+      <ion-item *ngSwitchCase="'dropdown'"  [formGroup]="form">
+        <ion-label floating>{{question.label}}</ion-label>
+        <ion-select [formControlName]="question.key" [id]="question.key" >
+            <ion-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-list *ngSwitchCase="'checkbox'"  [formGroup]="form">
+            <ion-label floating>{{question.label}}</ion-label>
+            <ion-item *ngFor="let opt of question.options" >
+                <ion-label> {{opt.value}}</ion-label>
+                <ion-checkbox checked="false" [formControlName]="question.key"></ion-checkbox>
+                <ion-note item-right>
+                    {{opt.value}}
+                </ion-note>
           </ion-item>
-   </ion-list>
+      </ion-list>
 
-  <ion-item class="errorMessage" *ngIf="hasError('required')">
-    <p>{{question.label}} is required</p>
-  </ion-item>
+       <ion-list *ngSwitchCase="'range'"  [formGroup]="form">
+            <ion-label floating> {{question.label}} </ion-label>
+             <ion-item *ngFor="let opt of question.options" >
+                <ion-label floating> {{opt.label}}</ion-label>
+                <ion-range [formControlName]="question.key" min="{{opt.min}}" max="{{opt.max}}" step="{{opt.step}}"  snaps="true" color="danger" pin="true">
+                    <ion-icon range-left small color="primary" name="water">{{opt.min}}</ion-icon>
+                    <ion-icon range-right color="secondary" name="water">{{opt.max}}</ion-icon>
+                </ion-range>
+              </ion-item>
+       </ion-list>
+
+      <ion-item class="errorMessage" *ngIf="hasError('required')">
+        <p>{{question.label}} is required</p>
+      </ion-item>
  
 </div>

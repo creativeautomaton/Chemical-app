@@ -9,130 +9,197 @@ import { AccordianQuestion }  from '../models/question-accordian';
 
 @Injectable()
 export class ChemicalQuestionService {
+  basic: boolean = true;
+
   // Todo: get from a remote source of question metadata
   getQuestions(): Promise<QuestionBase<any>[]> {
+
     let questions: QuestionBase<any>[] = [
 
-       new QuestionID ({
-          key: 'chemicals',
-          value: 'false'
-        }),
+          new QuestionID ({
+             label: 'testing nested questions',
+             key: 'assessments',
+             value: 'false',
+             required: true,
+             order: 1,
+             category: 'basic',
 
-      // new CheckboxQuestion({
-      //   key: 'brave',
-      //   label: 'Bravery Rating',
-      //   options: [
-      //     {key: 'solid',  value: 'Solid'},
-      //     {key: 'great',  value: 'Great'},
-      //     {key: 'good',   value: 'Good'},
-      //     {key: 'unproven', value: 'Unproven'}
-      //   ],
-      //   order: 3
-      // }),
+             options: [
+                 new TextboxQuestion({
+                    key: 'Title test',
+                    label: 'Task Title test',
+                    value: ' ',
+                    required: true,
+                    order: 1
+                 }),
+                 new TextboxQuestion({
+                    key: 'Title test 23232',
+                    label: 'Task Title test232323',
+                    value: ' ',
+                    required: true,
+                    order: 1
+                  })
+                ]
+           }),
+           new TextboxQuestion({
+              key: 'Title test',
+              label: 'Task Title test',
+              value: ' ',
+              required: true,
+              order: 3,
+              category: 'user-information'
+           }),
+           new TextboxQuestion({
+              key: 'Title test 23232',
+              label: 'Task Title test232323',
+              value: ' ',
+              required: true,
+              order: 2,
+               category: 'user-information'
+            })
+    ]
 
-      new RangeQuestion({
-        key: 'ph',
-        options: [
-          {
-            label: 'PH Range',
-            key: 'ph-1',
-            min: '0',
-            max: '14',
-            step: '1'
-          },
-        ],
-        order: 3
-      }),
 
-      new TextboxQuestion({
-        key: 'chemicalName',
-        label: 'Chemical Name',
-        value: ' ',
-        required: true,
-        order: 1
-      }),
 
-      new TextboxQuestion({
-        key: 'manufacturerID',
-        label: 'Manufacturer ID',
-        value: ' ',
-        required: false,
-        order: 2
-      }),
+    // let questions: QuestionBase<any>[] = [
+    //
+    //    new QuestionID ({
+    //       key: 'chemicals',
+    //       value: 'false'
+    //     }),
+    //
+    //   // new CheckboxQuestion({
+    //   //   key: 'brave',
+    //   //   label: 'Bravery Rating',
+    //   //   options: [
+    //   //     {key: 'solid',  value: 'Solid'},
+    //   //     {key: 'great',  value: 'Great'},
+    //   //     {key: 'good',   value: 'Good'},
+    //   //     {key: 'unproven', value: 'Unproven'}
+    //   //   ],
+    //   //   order: 3
+    //   // }),
+    //
+    //   new RangeQuestion({
+    //     key: 'ph',
+    //     label: 'Ph Range',
+    //     options: [
+    //       {
+    //         label: 'PH Range',
+    //         key: 'ph-1',
+    //         min: '0',
+    //         max: '14',
+    //         step: '1'
+    //       },
+    //     ],
+    //     order: 3
+    //   }),
+    //
+    //   new TextboxQuestion({
+    //     key: 'chemicalName',
+    //     label: 'Chemical Name',
+    //     value: ' ',
+    //     required: true,
+    //     order: 1
+    //   }),
+    //
+    //   new TextboxQuestion({
+    //     key: 'manufacturerID',
+    //     label: 'Manufacturer ID',
+    //     value: ' ',
+    //     required: false,
+    //     order: 2
+    //   }),
+    //
+    // new TextboxQuestion({
+    //   key: 'CAS',
+    //   label: 'CAS',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //
+    //  new TextboxQuestion({
+    //    key: 'flashPoint',
+    //    label: 'Flash Point',
+    //    value: ' ',
+    //    required: false,
+    //    order: 2
+    //  }),
+    //
+    // new TextboxQuestion({
+    //   key: 'vaporPressure',
+    //   label: 'Vapor Pressure',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //
+    // new TextboxQuestion({
+    //   key: 'evaporationRate',
+    //   label: 'Evaporation Rate',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //
+    // // new TextboxQuestion({
+    // //   key: 'ph',
+    // //   label: 'Ph',
+    // //   value: ' ',
+    // //   required: false,
+    // //   order: 2
+    // // }),
+    //
+    // new TextboxQuestion({
+    //   key: 'gasAndVapor',
+    //   label: 'Gas and Vapor',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //
+    // new TextboxQuestion({
+    //   key: 'mistAndParticulate',
+    //   label: 'Mist/Particulate',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //
+    // new TextboxQuestion({
+    //   key: 'healthEffect',
+    //   label: 'Health Effect',
+    //   value: ' ',
+    //   required: false,
+    //   order: 2
+    // }),
+    //   // new TextboxQuestion({
+    //   //   key: 'emailAddress',
+    //   //   label: 'Email',
+    //   //   type: 'email',
+    //   //   order: 3,
+    //   //   required: true
+    //   // })
+    // ];
 
-    new TextboxQuestion({
-      key: 'CAS',
-      label: 'CAS',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
 
-     new TextboxQuestion({
-       key: 'flashPoint',
-       label: 'Flash Point',
-       value: ' ',
-       required: false,
-       order: 2
-     }),
+    return Promise.resolve(
+      // questions.sort((a, b) => a.order - b.order)
+      questions.sort(function(a,b) {return (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0);} )
+    );
 
-    new TextboxQuestion({
-      key: 'vaporPressure',
-      label: 'Vapor Pressure',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
 
-    new TextboxQuestion({
-      key: 'evaporationRate',
-      label: 'Evaporation Rate',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
-
-    new TextboxQuestion({
-      key: 'ph',
-      label: 'Ph',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
-
-    new TextboxQuestion({
-      key: 'gasAndVapor',
-      label: 'Gas and Vapor',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
-
-    new TextboxQuestion({
-      key: 'mistAndParticulate',
-      label: 'Mist/Particulate',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
-
-    new TextboxQuestion({
-      key: 'healthEffect',
-      label: 'Health Effect',
-      value: ' ',
-      required: false,
-      order: 2
-    }),
-      // new TextboxQuestion({
-      //   key: 'emailAddress',
-      //   label: 'Email',
-      //   type: 'email',
-      //   order: 3,
-      //   required: true
-      // })
-    ];
-
-    return Promise.resolve(questions.sort((a, b) => a.order - b.order));
+    // array.sort((a: any, b: any) => {
+    //   if (a[field] < b[field]) {
+    //     return -1;
+    //   } else if (a[field] > b[field]) {
+    //     return 1;
+    //   } else {
+    //     return 0;
+    //   }
+    // });
+    // return array;
   }
 
   getChemicalQuestions(): Promise<QuestionBase<any>[]> {
@@ -153,7 +220,6 @@ export class AssessmentQuestionService {
           value: 'false'
         }),
 
-     
 
       new TextboxQuestion({
         key: 'Title',
