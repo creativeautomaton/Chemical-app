@@ -6,6 +6,7 @@ export class QuestionBase<T>{
   order: number;
   category: string;
   controlType: string;
+  section: string;
   constructor(options: {
       value?: T,
       key?: string,
@@ -14,6 +15,7 @@ export class QuestionBase<T>{
       order?: number,
       category?: string;
       controlType?: string
+      section?: string;
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -22,5 +24,6 @@ export class QuestionBase<T>{
     this.order = options.order === undefined ? 1 : options.order;
     this.category = options.category === undefined ? 'basic' : options.category;
     this.controlType = options.controlType || '';
+    this.section = options.section || '';
   }
 }

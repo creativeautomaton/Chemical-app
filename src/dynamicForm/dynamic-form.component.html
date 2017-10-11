@@ -1,6 +1,7 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
     <ion-list>
+<<<<<<< HEAD
 
 
               <div *ngFor="let question of questions let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}"  >
@@ -17,6 +18,26 @@
           <button ion-button large block [disabled]="!form.valid"> Submit </button>
         </ion-item>
 
+=======
+      <div *ngFor="let question of questions">
+        <ion-item-divider color="dark" *ngIf="question.section" >
+            <div>
+              {{question.section}}
+           </div>
+        </ion-item-divider>
+         <!-- <ion-item-divider color="dark" *ngIf="question.section"  text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" >
+
+             <div *ngIf="isGroupShown(i)">
+               {{question.section}}
+            </div>
+           <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+         </ion-item-divider> -->
+         <df-question [question]="question" [form]="form" ></df-question>
+      </div>
+      <ion-item>
+        <button ion-button large block [disabled]="!form.valid"> Submit </button>
+      </ion-item>
+>>>>>>> 990c6381ecaf172f7d7d85fc613d14c3a3408773
     </ion-list>
 
   </form>
