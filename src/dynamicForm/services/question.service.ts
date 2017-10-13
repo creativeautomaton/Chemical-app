@@ -220,10 +220,6 @@ export class AssessmentQuestionService {
           value: 'false'
         }),
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 990c6381ecaf172f7d7d85fc613d14c3a3408773
 
       new TextboxQuestion({
         key: 'title',
