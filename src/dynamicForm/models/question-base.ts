@@ -7,6 +7,8 @@ export class QuestionBase<T>{
   category: string;
   controlType: string;
   section: string;
+  header: boolean;
+  headerTitle: string;
   constructor(options: {
       value?: T,
       key?: string,
@@ -16,6 +18,8 @@ export class QuestionBase<T>{
       category?: string;
       controlType?: string
       section?: string;
+      header?: boolean;
+      headerTitle?: string;
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -25,5 +29,7 @@ export class QuestionBase<T>{
     this.category = options.category === undefined ? 'basic' : options.category;
     this.controlType = options.controlType || '';
     this.section = options.section || '';
+    this.header = !!options.header;
+    this.headerTitle = options.headerTitle || '';
   }
 }

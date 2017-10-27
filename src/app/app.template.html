@@ -29,6 +29,7 @@
         <ion-icon item-left [name]="p.icon"></ion-icon>
         {{p.title}}
       </button>
+
     </ion-list>
 
     <ion-list>
@@ -59,8 +60,8 @@
       <ion-list-header>
         Navigate
       </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
+      <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)" color="p.color">
+        <ion-icon item-left [name]="p.icon" ></ion-icon>
         {{p.title}}
       </button>
     </ion-list>
@@ -69,8 +70,8 @@
       <ion-list-header>
         Account
       </ion-list-header>
-      <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
-        <ion-icon item-left [name]="p.icon"></ion-icon>
+      <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)" color="p.color">
+        <ion-icon item-left [name]="p.icon" ></ion-icon>
         {{p.title}}
       </button>
     </ion-list>

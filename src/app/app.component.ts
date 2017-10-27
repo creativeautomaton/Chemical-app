@@ -30,10 +30,10 @@ export interface PageInterface {
   title: string;
   component: any;
   icon: string;
+  color?: any;
   logsOut?: boolean;
   index?: number;
 }
-
 
 @Component({
   templateUrl: 'app.template.html'
@@ -53,13 +53,17 @@ export class ConferenceApp {
     // { title: 'FAQs', component: FaqPage, icon: 'list-box' }
   ];
   loggedInPages: PageInterface[] = [
-    { title: 'Dashboard', component: DashboardPage, icon: 'list-box' },
-
-    { title: 'Chemicals', component: ChemicalsPage, icon: 'water' },
-    { title: 'New Assessment', component: AssessmentsPage, icon: 'add' },
-    { title: 'Constituent Table', component: AssessmentsPage, icon: 'add' },
-
-    { title: 'Assessments', component: AssessmentsPage, icon: 'list-box' },
+    { title: 'Dashboard', component: DashboardPage, icon: 'list-box',  color: 'primary' },
+    { title: 'Chemicals', component: ChemicalsPage, icon: 'water',  color: 'primary'},
+    { title: 'New Assessment', component: AssessmentsPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'Constituent Table', component: AssessmentsPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'Physical', component: DashboardPage, icon: 'medkit',  color: 'primary'},
+    { title: 'New Assessment', component: DashboardPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'Biological', component: DashboardPage, icon: 'leaf',  color: 'primary'},
+    { title: 'New Assessment', component: DashboardPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'Ergonomic', component: DashboardPage, icon: 'man',  color: 'primary'},
+    { title: 'New Assessment', component: DashboardPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'Assessments', component: AssessmentsPage, icon: 'clipboard',  color: 'primary' },
     // { title: 'Account', component: AccountPage, icon: 'person' },
     { title: 'Logout', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
@@ -68,6 +72,10 @@ export class ConferenceApp {
     { title: 'Signup', component: SignupPage, icon: 'person-add' },
     { title: 'FAQs', component: FaqPage, icon: 'list-box' }
   ];
+  // subPages: PageInterface[] = [
+  //   { title: 'New Assessment', component: AssessmentsPage, icon: 'add' },
+  //   { title: 'Constituent Table', component: AssessmentsPage, icon: 'add' }
+  // ];
 
   rootPage: any = LoginPage;
 

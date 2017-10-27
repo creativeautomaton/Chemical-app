@@ -220,13 +220,15 @@ export class AssessmentQuestionService {
           value: 'false'
         }),
 
-
       new TextboxQuestion({
         key: 'title',
         label: 'Task Title',
         value: ' ',
         required: true,
-        order: 1
+        order: 1,
+        section: 'user-information',
+        header: true,
+        headerTitle: 'User Information'
       }),
 
    // User Information
@@ -236,42 +238,47 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'User Information'
+        section: 'user-information',
       }),
       new TextboxQuestion({
         key: 'department',
         label: 'Department',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'user-information'
       }),
       new TextboxQuestion({
         key: 'section',
         label: 'Section Name',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'user-information'
       }),
       new TextboxQuestion({
         key: 'building',
         label: 'Building Name',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'user-information'
       }),
       new TextboxQuestion({
         key: 'date',
         label: 'Date',
         value: ' ',
         required: true,
-        order: 2
+        order: 2,
+        section: 'user-information'
       }),
       new TextboxQuestion({
         key: 'location',
         label: 'Location',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'user-information'
       }),
     // Chemical Table
       new TextboxQuestion({
@@ -280,56 +287,64 @@ export class AssessmentQuestionService {
         value: ' ',
         required: true,
         order: 2,
-        section: 'Chemical Table'
+        section: 'Chemical Table',
+        header: true
       }),
       new TextboxQuestion({
         key: 'chemicalManufacturer',
         label: 'Chemical Manufacturer:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'category',
         label: 'Product Category:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'boiling',
         label: 'Boiling Point (°F):',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table',
       }),
       new TextboxQuestion({
         key: 'freezing',
         label: 'Freezing Point (°F):',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'solubility',
         label: 'Solubility (%):',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'evaporationRate',
         label: 'Evaporation Rate:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'upperFlammability',
         label: 'Upper Flammability (%):',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'solubility',
