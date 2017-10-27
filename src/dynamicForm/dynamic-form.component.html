@@ -9,7 +9,7 @@
                   <h2>   {{question.section}}  </h2>
             </ion-item-divider>
              <!-- [ngClass]="{hide: isGroupShown(i)}" -->
-            <div *ngIf="question.section"   [ngClass]="question.section" >
+            <div *ngIf="question.section"   [ngClass]="question.section"  >
               <df-question [question]="question" [form]="form"  ></df-question>
             </div>
         </div>
