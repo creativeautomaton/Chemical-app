@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>assessment-detail</ion-title>
+    <ion-title> Assessment Detail</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close" color="light">Cancel</ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +20,88 @@
 
 <ion-content padding>
 
+  <ion-card *ngFor="let assessment of assessments"  class="device-card">
+
+    <ion-card-header>
+      <button ion-item detail-none>
+         <ion-grid >
+            <ion-row>
+              <ion-col >
+                <ion-row  >
+                  <ion-col col-sm-12 col-lg-9>
+                    <h1 item-left  > {{assessment.title}} </h1>
+                  </ion-col>
+                   <ion-col col-sm-12 col-lg-3>
+                     <h3 item-right > {{assessment.date}} </h3>
+                   </ion-col>
+
+                </ion-row>
+                <ion-row>
+                      <ion-note item-start>
+                        <strong> Assessment ID#: </strong> {{ assessment.key }}
+                       </ion-note>
+                </ion-row>
+                <ion-row>
+                      <ion-note item-start>
+                         <strong> Date: </strong> {{ assessment.date }}
+                       </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+         </ion-grid>
+      </button>
+    </ion-card-header>
+
+    <ion-card-content class="outer-content">
+
+      <ion-list>
+        <ion-grid>
+           <ion-row>
+              <ion-col col-sm-12 col-lg-6>
+                  <button ion-item padding col-md>
+                      <ion-row>
+                        <ion-col col-sm-12 col-lg-6 >
+                            <h3> <strong> Company:  </strong> </h3>
+                            <h3> <strong> Location: </strong> </h3>
+                         </ion-col>
+                         <ion-col col-sm-12 col-lg-6 >
+                          <p> {{assessment.company}} </p>
+                          <p> {{assessment.location}}</p>
+                        </ion-col>
+                        <hr />
+                      </ion-row>
+                    </button>
+                </ion-col>
+                <ion-col col-sm-12 col-lg-6 >
+                    <button ion-item padding col-md >
+                       <ion-row>
+                          <ion-col col-sm-12 col-lg-6 >
+                              <h3> <strong> Dept: </strong> </h3>
+                              <h3> <strong> Section: </strong> </h3>
+                              <h3> <strong> Building: </strong> </h3>
+                           </ion-col>
+                           <ion-col col-sm-12 col-lg-6 >
+                                <p> {{assessment.department}}</p>
+                                <p> {{assessment.section}}</p>
+                                <p> {{assessment.building}}</p>
+                           </ion-col>
+
+                        </ion-row>
+                      </button>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+
+      </ion-list>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left (click)="deleteAssessment(assessment.key)" >
+          <ion-icon name='remove'></ion-icon>
+          Remove Assessment
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

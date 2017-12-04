@@ -27,14 +27,13 @@
   <ion-card *ngFor="let assessment of assessments"  class="device-card">
 
     <ion-card-header>
-      <button ion-item detail-none  >
+      <button ion-item detail-none  (click)="viewAssessmentDetails(assessments.key)">
          <ion-grid >
             <ion-row>
               <ion-col >
-
                 <ion-row  >
                   <ion-col col-sm-12 col-lg-9>
-                    <h1 item-left > {{assessment.Title}} </h1>
+                    <h1 item-left  > {{assessment.title}} </h1>
                   </ion-col>
                    <ion-col col-sm-12 col-lg-3>
                      <h3 item-right > {{assessment.date}} </h3>
@@ -100,14 +99,14 @@
       </ion-list>
     </ion-card-content>
 
-    <!-- <ion-row no-padding>
+    <ion-row no-padding>
       <ion-col text-right>
-        <button ion-button clear small color="primary" icon-left >
+        <button ion-button clear small color="primary" icon-left (click)="deleteAssessment(assessment.key)" >
           <ion-icon name='remove'></ion-icon>
-          Remove
+          Remove Assessment
         </button>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
   </ion-card>
 
   <!-- <ion-fab right bottom>

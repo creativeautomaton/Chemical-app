@@ -27,6 +27,7 @@ import { AssessmentsPage } from '../pages/assessments/assessments';
 import { ChemicalsPage } from '../pages/chemicals/chemicals';
 import { AddChemicalsPage } from '../pages/add-chemicals/add-chemicals';
 import { AddAssessmentPage } from '../pages/add-assessment/add-assessment';
+import { AssessmentDetailPage } from '../pages/assessment-detail/assessment-detail';
 
 //Providers
 import { AuthService } from '../providers/auth-service';
@@ -68,7 +69,8 @@ export const firebaseConfig = {
     AssessmentsPage,
     AddChemicalsPage,
     AddAssessmentPage,
-    DashboardPage
+    DashboardPage,
+    AssessmentDetailPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp),
@@ -93,7 +95,8 @@ export const firebaseConfig = {
     ChemicalsPage,
     AssessmentsPage,
     AddAssessmentPage,
-    DashboardPage
+    DashboardPage,
+    AssessmentDetailPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  AuthService, AppData, UserData, Storage]
 })

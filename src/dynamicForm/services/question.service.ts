@@ -5,6 +5,8 @@ import { CheckboxQuestion } from '../models/question-checkbox';
 import { RangeQuestion } from '../models/question-range';
 import { QuestionBase }     from '../models/question-base';
 import { TextboxQuestion }  from '../models/question-textbox';
+import { DateQuestion }  from '../models/question-date';
+import { TimeQuestion }  from '../models/question-time';
 import { AccordianQuestion }  from '../models/question-accordian';
 
 @Injectable()
@@ -226,10 +228,11 @@ export class AssessmentQuestionService {
         value: ' ',
         required: true,
         order: 1,
-        section: 'user-information',
+        section: 'User Information',
         header: true,
-        headerTitle: 'User Information'
+        headerTitle: 'Assesment Title'
       }),
+
 
    // User Information
       new TextboxQuestion({
@@ -238,7 +241,7 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'user-information',
+        section: 'User Information',
       }),
       new TextboxQuestion({
         key: 'department',
@@ -246,7 +249,7 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'user-information'
+        section: 'User Information'
       }),
       new TextboxQuestion({
         key: 'section',
@@ -254,7 +257,7 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'user-information'
+        section: 'User Information'
       }),
       new TextboxQuestion({
         key: 'building',
@@ -262,15 +265,23 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'user-information'
+        section: 'User Information'
       }),
-      new TextboxQuestion({
+      new DateQuestion({
         key: 'date',
         label: 'Date',
         value: ' ',
         required: true,
         order: 2,
-        section: 'user-information'
+        section: 'User Information'
+      }),
+      new TimeQuestion({
+        key: 'time',
+        label: 'Time',
+        value: ' ',
+        required: true,
+        order: 2,
+        section: 'User Information'
       }),
       new TextboxQuestion({
         key: 'location',
@@ -278,7 +289,7 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'user-information'
+        section: 'User Information'
       }),
     // Chemical Table
       new TextboxQuestion({
@@ -288,7 +299,8 @@ export class AssessmentQuestionService {
         required: true,
         order: 2,
         section: 'Chemical Table',
-        header: true
+        header: true ,
+        headerTitle: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'chemicalManufacturer',
@@ -306,116 +318,203 @@ export class AssessmentQuestionService {
         order: 2,
         section: 'Chemical Table'
       }),
-      new TextboxQuestion({
-        key: 'boiling',
-        label: 'Boiling Point (°F):',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Chemical Table',
-      }),
-      new TextboxQuestion({
-        key: 'freezing',
-        label: 'Freezing Point (°F):',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Chemical Table'
-      }),
-      new TextboxQuestion({
-        key: 'solubility',
-        label: 'Solubility (%):',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Chemical Table'
-      }),
-      new TextboxQuestion({
+      new RangeQuestion({
+          key: 'boiling',
+          label: 'Boiling Point (°F):',
+          options: [
+            {
+              label: 'Boiling Point (°F)',
+              key: 'boiling-1',
+              min: '0',
+              max: '800',
+              step: '1'
+            },
+          ],
+          order: 2,
+          section: 'Chemical Table',
+        }),
+      new RangeQuestion({
+          key: 'freezing',
+          label: 'Freezing Point (°F):',
+          options: [
+            {
+              label: 'freezing Range',
+              key: 'freezing-1',
+              min: '-250',
+              max: '0',
+              step: '1'
+            },
+          ],
+          order: 2,
+          section: 'Chemical Table',
+        }),
+      new RangeQuestion({
+          key: 'solubility',
+          label: 'Solubility (%):',
+          options: [
+            {
+              label: 'Solubility (%):',
+              key: 'solubility-1',
+              min: '0',
+              max: '100',
+              step: '0.5'
+            },
+          ],
+          order: 2,
+          section: 'Chemical Table',
+        }),
+      new RangeQuestion({
         key: 'evaporationRate',
         label: 'Evaporation Rate:',
-        value: ' ',
+        options: [
+          {
+            label: 'Evaporation Rate (%):',
+            key: 'evaporationRate-1',
+            min: '0',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
         order: 2,
         section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'upperFlammability',
         label: 'Upper Flammability (%):',
-        value: ' ',
+        options: [
+          {
+            label: 'Upper Flammability (%):',
+            key: 'upperFlammability-1',
+            min: '0',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
         order: 2,
         section: 'Chemical Table'
-      }),
-      new TextboxQuestion({
-        key: 'solubility',
-        label: 'Solubility (%):',
-        value: ' ',
-        required: false,
-        order: 2
       }),
       new TextboxQuestion({
         key: 'vaporDensity',
         label: 'Vapor Density:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'healthHazard',
         label: 'Health Hazard:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
       new TextboxQuestion({
         key: 'chemicalManufacturerID',
         label: 'Chemical/Manf. ID:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'molWeight',
         label: 'Molecular Weight (g/mol):',
-        value: ' ',
+        options: [
+          {
+            label: 'Molecular Weight (g/mol):',
+            key: 'molWeight-1',
+            min: '10',
+            max: '1000',
+            step: '5'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'flashPoint',
         label: 'Flash Point (°F):',
-        value: ' ',
+        options: [
+          {
+            label: 'Flash Point (°F):',
+            key: 'flashPoint-1',
+            min: '-50',
+            max: '1000',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'meltingPoint',
         label: 'Melting Point (°F):',
-        value: ' ',
+        options: [
+          {
+            label: 'Melting Point (°F):',
+            key: 'meltingPoint-1',
+            min: '-400',
+            max: '5000',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'vaporPressure',
         label: 'Vapor Pressure (mm/Hg):',
-        value: ' ',
+        options: [
+          {
+            label: 'Vapor Pressure (mm/Hg):',
+            key: 'vaporPressure-1',
+            min: '1',
+            max: '3000',
+            step: '10'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'ph',
         label: 'pH:',
-        value: ' ',
+        options: [
+          {
+            label: 'Ph Range:',
+            key: 'ph-1',
+            min: '0',
+            max: '14',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
 
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'lowerFlammability',
         label: 'Lower Flammability (%):',
-        value: ' ',
+        options: [
+          {
+            label: 'Lower Flammability (%):',
+            key: 'lowerFlammability-1',
+            min: '0',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Chemical Table'
       }),
 
 // Constituents Table
@@ -425,28 +524,41 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'Constituents Table'
+        section: 'Constituents Table',
+        header: true,
+        headerTitle: 'Constituents Table'
       }),
       new TextboxQuestion({
         key: 'constituentName',
         label: 'Constituent Name:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Constituents Table'
       }),
       new TextboxQuestion({
         key: 'physicalState',
         label: 'Physical State:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Constituents Table'
       }),
       new TextboxQuestion({
         key: 'percentOfChemical',
         label: '% of chemical:',
-        value: ' ',
+        options: [
+          {
+            label: '% of chemical:',
+            key: 'percentOfChemical-1',
+            min: '0',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Constituents Table'
       }),
       // Exposure Limits - Within the Constituents Table
       //ACGIH
@@ -456,28 +568,33 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'Exposure Limits '
+        section: 'Exposure Limits',
+        header: true,
+        headerTitle: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'ACGIH_STEL',
         label: 'ACGIH STEL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'ACGIH_CL',
         label: 'ACGIH CL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'BEI',
         label: 'BEI:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       // OSHA
       new TextboxQuestion({
@@ -485,28 +602,32 @@ export class AssessmentQuestionService {
         label: 'OSHA PEL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OSHA_STEL',
         label: 'OSHA STEL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OSHA_CL',
         label: 'OSHA CL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OSHA_EL',
         label: 'OSHA EL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       //NIOSH
       new TextboxQuestion({
@@ -514,56 +635,64 @@ export class AssessmentQuestionService {
         label: 'NIOSH REL:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'NIOSH_IDLH',
         label: 'NIOSH IDLH:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OdorThreshold',
         label: 'Odor Threshold:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OSHA_Standard',
         label: 'OSHA Standard:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'exposureLimitsHealthHazard',
         label: 'Health Hazard:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'OSHA_AirSamplingMethod',
         label: 'OSHA Air Sampling Method:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'NIOSH_AirSamplingMethod',
         label: 'NIOSH Air Sampling Method:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
       new TextboxQuestion({
         key: 'bulkSamplingMethod',
         label: 'Bulk Sampling Method:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Exposure Limits'
       }),
 
   // Work Conditions Table
@@ -573,112 +702,153 @@ export class AssessmentQuestionService {
         value: ' ',
         required: false,
         order: 2,
-        section: 'Working Conditions'
+        section: 'Working Conditions',
+        header: true,
+        headerTitle: 'Working Conditions'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'No_of_Workers',
         label: 'No. of Workers:',
-        value: ' ',
+        options: [
+          {
+            label: 'No. of Workers:',
+            key: 'No_of_Workers-1',
+            min: '1',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'spaceVolume',
         label: 'Space Volume:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'roomVentIn',
         label: 'Room Ventilation In:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'roomVentOut',
         label: 'Room Ventilation Out:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
-      new TextboxQuestion({
-        key: 'No_of_Workers',
-        label: 'No. of Workers:',
-        value: ' ',
+      new RangeQuestion({
+        key: 'workingTemperature',
+        label: 'Environment Temperature:',
+        options: [
+          {
+            label: 'Environment Temperature (°F):',
+            key: 'workingTemperature-1',
+            min: '-50',
+            max: '120',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
-      new TextboxQuestion({
-        key: 'temperature',
-        label: 'Temperature:',
-        value: ' ',
+      new RangeQuestion({
+        key: 'workingHumidity',
+        label: 'Working Humidity:',
+        options: [
+          {
+            label: 'Working Humidity:',
+            key: 'workingHumidity-1',
+            min: '0',
+            max: '100',
+            step: '1'
+          },
+        ],
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
-      new TextboxQuestion({
-        key: 'humidity',
-        label: 'Humidity:',
-        value: ' ',
-        required: false,
-        order: 2
-      }),
-      new TextboxQuestion({
+      new DropdownQuestion({
         key: 'windDirection',
         label: 'Wind Direction:',
-        value: ' ',
-        required: false,
-        order: 2
+        options: [
+          {key: 'north',  value: 'North'},
+          {key: 'northwest',  value: 'North West'},
+          {key: 'northeast',   value: 'North East'},
+          {key: 'east',  value: 'East'},
+          {key: 'south',  value: 'South'},
+          {key: 'southeast',   value: 'South East'},
+          {key: 'southwest',   value: 'South West'},
+          {key: 'west',   value: 'West'}
+        ],
+        order: 3,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'windSpeed',
-        label: 'Wind Speed:',
+        label: 'Wind Speed (mph):',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'atmoPressure',
         label: 'Atm. Pressure:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'workPosition',
         label: 'Work Position:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'employeePosition',
         label: 'Employee Position:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'DFBZ',
         label: 'Distance from Breathing Zone:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'exposureFrequency',
         label: 'Frequency of Exposure:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
       new TextboxQuestion({
         key: 'exposurePerDay',
         label: 'Duration of Exposure Per Day:',
         value: ' ',
         required: false,
-        order: 2
+        order: 2,
+        section: 'Working Conditions'
       }),
 
   // Task Table
@@ -690,63 +860,73 @@ export class AssessmentQuestionService {
             value: ' ',
             required: false,
             order: 2,
-            section: 'Task Table'
+            section: 'Task Table',
+            header: true,
+            headerTitle: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'metalType',
             label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'materialThickness',
             label: 'Thickness of the material (inches):',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'weldAreaWidth',
             label: 'Width of weld area (inches):',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'weldAreaHeight',
             label: 'Length of weld area (inches):',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'pipeDiameter',
             label: 'Pipe Diameter (inches):',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'WeldPasses',
             label: 'Number of Passes:',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'weldAmperage',
             label: 'Welding Machine Amperage:',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
           new TextboxQuestion({
             key: 'weldOther',
             label: 'Other:',
             value: ' ',
             required: false,
-            order: 2
+            order: 2,
+            section: 'Task Table'
           }),
 
       // Chemical Risk Ranking
@@ -756,49 +936,57 @@ export class AssessmentQuestionService {
           value: ' ',
           required: false,
           order: 2,
-          section: 'Chemical Risk Ranking'
+          section: 'Chemical Risk Ranking',
+          header: true,
+          headerTitle: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskChemicalID',
           label: 'Chemical/Manf. ID:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskFlashPoint',
           label: 'Flash Point:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskVaporPressure',
           label: 'Vapor Pressure:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskEvaporationRate',
           label: 'Evaporation Rate:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskPH',
           label: 'pH:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'riskHealthHazard',
           label: 'Health Hazard:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Chemical Risk Ranking'
         }),
 
     // Constituent Risk Ranking
@@ -808,70 +996,81 @@ export class AssessmentQuestionService {
           value: ' ',
           required: false,
           order: 2,
-          section: 'Constituent Risk Ranking'
+          section: 'Constituent Risk Ranking',
+          header: true,
+          headerTitle: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentCAS',
           label: 'CAS#:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentChemicalID',
           label: 'Chemical/Manf. ID:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentFlashPoint',
           label: 'Flash Point:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentVaporPressure',
           label: 'Vapor Pressure:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentEvaporationRate',
           label: 'Evaporation Rate:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentPH',
           label: 'pH:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentGasVapor',
           label: 'Gas and Vapor:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentMistParticulate',
           label: 'Mist/Particulate:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'constituentHealthHazard',
           label: 'Health Hazard:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Constituent Risk Ranking'
         }),
 
 
@@ -882,35 +1081,41 @@ export class AssessmentQuestionService {
           value: ' ',
           required: false,
           order: 2,
-          section: 'Task Risk Ranking'
+          section: 'Task Risk Ranking',
+          header: true,
+          headerTitle: 'Task Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'taskSpaceVolume',
           label: 'Space Volume:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Task Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'taskExposureFrequency',
           label: 'Frequency of Exposure:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Task Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'taskDuration',
           label: 'Duration:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Task Risk Ranking'
         }),
         new TextboxQuestion({
           key: 'taskType',
           label: 'Task Type:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Task Risk Ranking'
         }),
 
 
@@ -928,35 +1133,41 @@ export class AssessmentQuestionService {
             {key: 'Booth', value: 'Booth'}
           ],
           order: 3,
-          section: 'Local Exhaust Ventilation'
+          section: 'Local Exhaust Ventilation',
+          header: true,
+          headerTitle: 'Local Exhaust Ventilation'
         }),
         new TextboxQuestion({
           key: 'dilutionVentSize',
           label: 'Size:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Local Exhaust Ventilation'
         }),
         new TextboxQuestion({
           key: 'dilutionHoodCaptureVelocity',
           label: 'Hood Capture Velocity:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Local Exhaust Ventilation'
         }),
         new TextboxQuestion({
           key: 'dilutionHoodFlowRate',
           label: 'Hood Flow Rate:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Local Exhaust Ventilation'
         }),
         new TextboxQuestion({
           key: 'dilutionDuctVelocity',
           label: 'Duct Velocity:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Local Exhaust Ventilation'
         }),
 
 
@@ -967,7 +1178,7 @@ export class AssessmentQuestionService {
           value: ' ',
           required: false,
           order: 2,
-          section: 'Dilution'
+          section: 'Local Exhaust Ventilation'
         }),
 
 
@@ -989,21 +1200,25 @@ export class AssessmentQuestionService {
             {key: 'Silver Shield/4H', value: 'Silver Shield/4H'}
           ],
           order: 3,
-          section: 'Protective Gloves'
+          section: 'Protective Gloves',
+          header: true,
+          headerTitle: 'Protective Gloves'
         }),
         new TextboxQuestion({
           key: 'protectiveGloveCAS',
           label: 'CAS#:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Protective Gloves'
         }),
         new TextboxQuestion({
           key: 'protectiveGloveConstituent',
           label: 'Constituent:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Protective Gloves'
         }),
 
 
@@ -1030,21 +1245,25 @@ export class AssessmentQuestionService {
             {key: 'Tychem® TF',   value: 'Tychem® TF'}
           ],
           order: 3,
-          section: 'Protective Clothing'
+          section: 'Protective Clothing',
+          header: true,
+          headerTitle: 'Protective Clothing'
         }),
         new TextboxQuestion({
           key: 'protectiveClothingCAS',
           label: 'CAS#:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Protective Clothing'
         }),
         new TextboxQuestion({
           key: 'protectiveClothingConstituent',
           label: 'Constituent:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Protective Clothing'
         }),
 
 
@@ -1059,7 +1278,9 @@ export class AssessmentQuestionService {
             {key: 'Supplied Air',   value: 'Supplied Air'}
           ],
           order: 3,
-          section: 'Respirator Protection'
+          section: 'Respirator Protection',
+          header: true,
+          headerTitle: 'Respirator Protection'
         }),
         new DropdownQuestion({
           key: 'Respirator',
@@ -1074,21 +1295,24 @@ export class AssessmentQuestionService {
             {key: 'Helmet / Hood Continuous Flow',   value: 'Helmet / Hood Continuous Flow'},
             {key: 'SCBA',   value: 'SCBA'}
           ],
-          order: 3
+          order: 3,
+          section: 'Respirator Protection'
         }),
         new TextboxQuestion({
           key: 'RespiratorCAS',
           label: 'CAS#:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Respirator Protection'
         }),
         new TextboxQuestion({
           key: 'RespiratorConstituent',
           label: 'Constituent:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Respirator Protection'
         }),
 
 
@@ -1099,63 +1323,73 @@ export class AssessmentQuestionService {
            value: ' ',
            required: false,
            order: 2,
-           section: 'Direct Reading Exposure Monitoring'
+           section: 'Direct Reading Exposure Monitoring',
+           header: true,
+           headerTitle: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREMConstituent',
            label: 'Constituent:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREMIonizationPotential',
            label: 'Ionization Potential:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_PIDCF',
            label: 'PID CF:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_LFL',
            label: 'LFL:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_UFL',
            label: 'UFL:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_LEL_CF',
            label: 'LEL CF:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_ColorimetricTubeChip',
            label: 'Colorimetric Tube/Chip:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
          new TextboxQuestion({
            key: 'DREM_Other',
            label: 'Other:',
            value: ' ',
            required: false,
-           order: 2
+           order: 2,
+           section: 'Direct Reading Exposure Monitoring'
          }),
 
 
@@ -1166,35 +1400,41 @@ export class AssessmentQuestionService {
           value: ' ',
           required: false,
           order: 2,
-          section: 'Exposure Data'
+          section: 'Exposure Data',
+          header: true,
+          headerTitle: 'Exposure Data'
         }),
         new TextboxQuestion({
           key: 'exposureDataConstituent',
           label: 'Constituent:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Exposure Data'
         }),
         new TextboxQuestion({
           key: 'exposureDataModeledExposureResults',
           label: 'Modeled Exposure Results:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Exposure Data'
         }),
         new TextboxQuestion({
           key: 'exposureDataPredictiveExposureResults',
           label: 'Predictive Exposure Results:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Exposure Data'
         }),
         new TextboxQuestion({
           key: 'exposureDataObjectiveDataExposureResults',
           label: 'Objective Data Exposure Results:',
           value: ' ',
           required: false,
-          order: 2
+          order: 2,
+          section: 'Exposure Data'
         }),
 
 

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheet, ActionSheetController, Config, ToastController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ActionSheet, ActionSheetController, Config,
+         ToastController,  ModalController
+ } from 'ionic-angular';
 
 import { AddAssessmentPage } from '../add-assessment/add-assessment';
 import { AppData } from '../../providers/app-data';
+import { AssessmentDetailPage } from '../assessment-detail/assessment-detail';
 
 //Angularfire2
 import { AngularFire,  FirebaseListObservable } from 'angularfire2';
@@ -14,20 +17,11 @@ import { AuthService } from '../../providers/auth-service';
 })
 export class AssessmentsPage {
     actionSheet: ActionSheet;
-    remove: FirebaseListObservable<any>;
+    removeAssessment: FirebaseListObservable<any>;
     assessments:  any[];
     keys:  any[];
     mine: boolean = true;
-
-    diseases = [
-      { title: "Type 1 Diabetes", description: "Type 1 diabetes is an autoimmune disease in which the body’s immune system attacks and destroys the beta cells in the pancreas that make insulin." },
-      { title: "Multiple Sclerosis", description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system." },
-      { title: "Crohn's & Colitis", description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines." },
-      { title: "Lupus", description: "Systemic lupus erythematosus (lupus) is a chronic, systemic autoimmune disease which can damage any part of the body, including the heart, joints, skin, lungs, blood vessels, liver, kidneys and nervous system." },
-      { title: "Rheumatoid Arthritis", description: "Rheumatoid arthritis (RA) is an autoimmune disease in which the body's immune system mistakenly begins to attack its own tissues, primarily the synovium, the membrane that lines the joints." }
-    ];
-
-    shownGroup = null; 
+    shownGroup = null;
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
@@ -42,7 +36,7 @@ export class AssessmentsPage {
   ) {
     this.assessments =  [];
     this.keys =  [];
-    this.remove = af.database.list('/users/' + this.auth.id() + '/assessments/', { preserveSnapshot: true } );
+    this.removeAssessment = af.database.list('/users/' + this.auth.id() + '/assessments/', { preserveSnapshot: true } );
     this.keys = this.navParams.get('key');
    }
 
@@ -66,6 +60,46 @@ export class AssessmentsPage {
        console.log(data);
      });
       modal.present();
+    }
+
+    deleteAssessment(keys){
+              let actionSheet = this.actionSheetCtrl.create({
+                title: ' Are you Sure? ',
+                buttons: [
+                  {
+                    text: `Confirm Delete`,
+                    handler: (assessmentData) => {
+                        console.log(keys);
+                        this.removeAssessment.remove(keys);
+                        let toast = this.toastCtrl.create({
+                          message:   name + 'Assesment was Removed successfully',
+                          duration: 3000,
+                          position: 'middle'
+                        });
+                        toast.present();
+                        this.navCtrl.push(AssessmentsPage);
+                    }
+                  }
+                ]
+              });
+              actionSheet.present();
+    }
+
+    viewAssessmentDetails(assessmentData, keys){
+      console.log(keys);
+      console.log(assessmentData);
+     
+      let modal = this.modalCtrl.create(AssessmentDetailPage, {assessmentDetail: assessmentData});
+        modal.present();
+
+          // this.appData.getAssessments().then(
+          //   assessmentData => {
+          //     this.assessments = assessmentData;
+          //    //  this.assessments = assessmentData.filter((filter) => {
+          //    //     return filter.type === "device";
+          //    //  });
+          //     console.log(assessmentData);
+          //   });
     }
 
     toggleGroup(group) {

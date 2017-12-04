@@ -6,6 +6,9 @@ import { NavController, NavParams, ModalController, ToastController, ViewControl
 
 import { AppData } from '../providers/app-data';
 import { UserData } from '../providers/user-data';
+import { ChemicalsPage } from '../pages/chemicals/chemicals';
+import { AssessmentsPage } from '../pages/assessments/assessments';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 //Angularfire2
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable  } from 'angularfire2';
@@ -117,8 +120,9 @@ export class DynamicFormComponent implements OnInit {
       this.formRootCheck(formRoot, formData, formKey );
             console.log(formData);
        this.viewCtrl.dismiss();
+       this.navCtrl.push(AssessmentsPage);
    }
-   
+
 
    toggleGroup(group) {
        if (this.isGroupShown(group)) {

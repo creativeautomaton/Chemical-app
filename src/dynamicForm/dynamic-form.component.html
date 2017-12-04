@@ -1,12 +1,14 @@
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
     <ion-list>
       <div *ngFor="let question of questions;  let i = index;"  >
-        <div  *ngIf="question.section == 'user-information'"  >
+        <div  *ngIf="question.section == 'User Information'"  >
             <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)"  >
                   <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
-                  <h2>   {{question.section}}  </h2>
+                  <h2>   {{question.Section}}  </h2>
             </ion-item-divider>
              <!-- [ngClass]="{hide: isGroupShown(i)}" -->
             <div *ngIf="question.section"   [ngClass]="question.section"  >
@@ -20,11 +22,156 @@
                   <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
                   <h2>   {{question.section}}</h2>
             </ion-item-divider>
-            <div class="hide" *ngIf="question.section" [ngClass]="{show: isGroupShown(i)}" >
+            <div  *ngIf="question.section" [ngClass]="question.section" >
               <df-question [question]="question" [form]="form"  ></df-question>
             </div>
         </div>
       </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Constituents Table'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Exposure Limits'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Working Conditions'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Task Table'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Chemical Risk Ranking'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Task Risk Ranking'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Local Exhaust Ventilation'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Dilution'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Protective Gloves'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Protective Clothing'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Respirator Protection'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Direct Reading Exposure Monitoring'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+      <div *ngFor="let question of questions;  let i = last;"  >
+        <div  *ngIf="question.section == 'Exposure Data'" >
+            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
+                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <h2>   {{question.section}}</h2>
+            </ion-item-divider>
+            <div  *ngIf="question.section" [ngClass]="question.section" >
+              <df-question [question]="question" [form]="form"  ></df-question>
+            </div>
+        </div>
+      </div>
+
       <ion-item>
         <button ion-button large block [disabled]="!form.valid"> Submit </button>
       </ion-item>

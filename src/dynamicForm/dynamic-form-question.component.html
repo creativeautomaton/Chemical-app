@@ -14,6 +14,16 @@
         </ion-select>
       </ion-item>
 
+      <ion-item *ngSwitchCase="'date'"  [formGroup]="form">
+        <ion-label floating>{{question.label}}</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY"  [formControlName]="question.key"></ion-datetime>
+      </ion-item>
+
+      <ion-item *ngSwitchCase="'time'"  [formGroup]="form">
+        <ion-label floating>{{question.label}}</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"  [formControlName]="question.key"></ion-datetime>
+      </ion-item>
+
       <ion-list *ngSwitchCase="'checkbox'"  [formGroup]="form">
             <ion-label floating>{{question.label}}</ion-label>
             <ion-item *ngFor="let opt of question.options" >
@@ -39,5 +49,5 @@
       <ion-item class="errorMessage" *ngIf="hasError('required')">
         <p>{{question.label}} is required</p>
       </ion-item>
- 
+
 </div>
