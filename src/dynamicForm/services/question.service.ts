@@ -516,926 +516,929 @@ export class AssessmentQuestionService {
         order: 2,
         section: 'Chemical Table'
       }),
+//
+// // Constituents Table
+//       new TextboxQuestion({
+//         key: 'cas',
+//         label: 'CAS#:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Constituents Table',
+//         header: true,
+//         headerTitle: 'Constituents Table'
+//       }),
+//       new TextboxQuestion({
+//         key: 'constituentName',
+//         label: 'Constituent Name:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Constituents Table'
+//       }),
+//       new TextboxQuestion({
+//         key: 'physicalState',
+//         label: 'Physical State:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Constituents Table'
+//       }),
+//       new TextboxQuestion({
+//         key: 'percentOfChemical',
+//         label: '% of chemical:',
+//         options: [
+//           {
+//             label: '% of chemical:',
+//             key: 'percentOfChemical-1',
+//             min: '0',
+//             max: '100',
+//             step: '1'
+//           },
+//         ],
+//         required: false,
+//         order: 2,
+//         section: 'Constituents Table'
+//       }),
+//       // Exposure Limits - Within the Constituents Table
+//       //ACGIH
+//       new TextboxQuestion({
+//         key: 'ACGIH_TLV',
+//         label: 'ACGIH TLV:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits',
+//         header: true,
+//         headerTitle: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'ACGIH_STEL',
+//         label: 'ACGIH STEL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'ACGIH_CL',
+//         label: 'ACGIH CL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'BEI',
+//         label: 'BEI:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       // OSHA
+//       new TextboxQuestion({
+//         key: 'OSHA_PEL',
+//         label: 'OSHA PEL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OSHA_STEL',
+//         label: 'OSHA STEL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OSHA_CL',
+//         label: 'OSHA CL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OSHA_EL',
+//         label: 'OSHA EL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       //NIOSH
+//       new TextboxQuestion({
+//         key: 'NIOSH_REL',
+//         label: 'NIOSH REL:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'NIOSH_IDLH',
+//         label: 'NIOSH IDLH:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OdorThreshold',
+//         label: 'Odor Threshold:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OSHA_Standard',
+//         label: 'OSHA Standard:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'exposureLimitsHealthHazard',
+//         label: 'Health Hazard:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'OSHA_AirSamplingMethod',
+//         label: 'OSHA Air Sampling Method:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'NIOSH_AirSamplingMethod',
+//         label: 'NIOSH Air Sampling Method:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//       new TextboxQuestion({
+//         key: 'bulkSamplingMethod',
+//         label: 'Bulk Sampling Method:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Exposure Limits'
+//       }),
+//
+//   // Work Conditions Table
+//       new TextboxQuestion({
+//         key: 'WorkSite',
+//         label: 'Work Site:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions',
+//         header: true,
+//         headerTitle: 'Working Conditions'
+//       }),
+//       new RangeQuestion({
+//         key: 'No_of_Workers',
+//         label: 'No. of Workers:',
+//         options: [
+//           {
+//             label: 'No. of Workers:',
+//             key: 'No_of_Workers-1',
+//             min: '1',
+//             max: '100',
+//             step: '1'
+//           },
+//         ],
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'spaceVolume',
+//         label: 'Space Volume:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'roomVentIn',
+//         label: 'Room Ventilation In:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'roomVentOut',
+//         label: 'Room Ventilation Out:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new RangeQuestion({
+//         key: 'workingTemperature',
+//         label: 'Environment Temperature:',
+//         options: [
+//           {
+//             label: 'Environment Temperature (°F):',
+//             key: 'workingTemperature-1',
+//             min: '-50',
+//             max: '120',
+//             step: '1'
+//           },
+//         ],
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new RangeQuestion({
+//         key: 'workingHumidity',
+//         label: 'Working Humidity:',
+//         options: [
+//           {
+//             label: 'Working Humidity:',
+//             key: 'workingHumidity-1',
+//             min: '0',
+//             max: '100',
+//             step: '1'
+//           },
+//         ],
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new DropdownQuestion({
+//         key: 'windDirection',
+//         label: 'Wind Direction:',
+//         options: [
+//           {key: 'north',  value: 'North'},
+//           {key: 'northwest',  value: 'North West'},
+//           {key: 'northeast',   value: 'North East'},
+//           {key: 'east',  value: 'East'},
+//           {key: 'south',  value: 'South'},
+//           {key: 'southeast',   value: 'South East'},
+//           {key: 'southwest',   value: 'South West'},
+//           {key: 'west',   value: 'West'}
+//         ],
+//         order: 3,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'windSpeed',
+//         label: 'Wind Speed (mph):',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'atmoPressure',
+//         label: 'Atm. Pressure:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'workPosition',
+//         label: 'Work Position:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'employeePosition',
+//         label: 'Employee Position:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'DFBZ',
+//         label: 'Distance from Breathing Zone:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'exposureFrequency',
+//         label: 'Frequency of Exposure:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//       new TextboxQuestion({
+//         key: 'exposurePerDay',
+//         label: 'Duration of Exposure Per Day:',
+//         value: ' ',
+//         required: false,
+//         order: 2,
+//         section: 'Working Conditions'
+//       }),
+//
+//   // Task Table
+//       //Task
+//         // Material Fabrication
+//           new TextboxQuestion({
+//             key: 'generationRate',
+//             label: 'Generation Rate (rods/hour) :',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table',
+//             header: true,
+//             headerTitle: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'metalType',
+//             label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'materialThickness',
+//             label: 'Thickness of the material (inches):',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'weldAreaWidth',
+//             label: 'Width of weld area (inches):',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'weldAreaHeight',
+//             label: 'Length of weld area (inches):',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'pipeDiameter',
+//             label: 'Pipe Diameter (inches):',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'WeldPasses',
+//             label: 'Number of Passes:',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'weldAmperage',
+//             label: 'Welding Machine Amperage:',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//           new TextboxQuestion({
+//             key: 'weldOther',
+//             label: 'Other:',
+//             value: ' ',
+//             required: false,
+//             order: 2,
+//             section: 'Task Table'
+//           }),
+//
+//       // Chemical Risk Ranking
+//         new TextboxQuestion({
+//           key: 'riskChemicalName',
+//           label: 'Chemical Name:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking',
+//           header: true,
+//           headerTitle: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskChemicalID',
+//           label: 'Chemical/Manf. ID:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskFlashPoint',
+//           label: 'Flash Point:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskVaporPressure',
+//           label: 'Vapor Pressure:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskEvaporationRate',
+//           label: 'Evaporation Rate:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskPH',
+//           label: 'pH:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'riskHealthHazard',
+//           label: 'Health Hazard:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Chemical Risk Ranking'
+//         }),
+//
+//     // Constituent Risk Ranking
+//         new TextboxQuestion({
+//           key: 'constituentChemicalName',
+//           label: 'Chemical Name:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking',
+//           header: true,
+//           headerTitle: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentCAS',
+//           label: 'CAS#:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentChemicalID',
+//           label: 'Chemical/Manf. ID:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentFlashPoint',
+//           label: 'Flash Point:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentVaporPressure',
+//           label: 'Vapor Pressure:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentEvaporationRate',
+//           label: 'Evaporation Rate:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentPH',
+//           label: 'pH:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentGasVapor',
+//           label: 'Gas and Vapor:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentMistParticulate',
+//           label: 'Mist/Particulate:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'constituentHealthHazard',
+//           label: 'Health Hazard:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Constituent Risk Ranking'
+//         }),
+//
+//
+//     // Task Risk Ranking
+//         new TextboxQuestion({
+//           key: 'taskWorkSite',
+//           label: 'Work Site:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Task Risk Ranking',
+//           header: true,
+//           headerTitle: 'Task Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'taskSpaceVolume',
+//           label: 'Space Volume:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Task Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'taskExposureFrequency',
+//           label: 'Frequency of Exposure:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Task Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'taskDuration',
+//           label: 'Duration:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Task Risk Ranking'
+//         }),
+//         new TextboxQuestion({
+//           key: 'taskType',
+//           label: 'Task Type:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Task Risk Ranking'
+//         }),
+//
+//
+//     // Local Exhaust Ventilation
+//         new DropdownQuestion({
+//           key: 'localExhaustVentilation',
+//           label: 'Local Exhaust Ventilation Types ',
+//           options: [
+//             {key: 'Slot Hood Without Flange',  value: 'Slot Hood Without Flange'},
+//             {key: 'Slot Hood With Flange',  value: 'Slot Hood With Flange'},
+//             {key: 'Plain Opening Hood',   value: 'Plain Opening Hood'},
+//             {key: 'Plain Multiple Slot Hood',  value: 'Plain Multiple Slot Hood'},
+//             {key: 'Flange Multiple Slot Hood',  value: 'Flange Multiple Slot Hood'},
+//             {key: 'Canopy Hood',   value: 'Canopy Hood'},
+//             {key: 'Booth', value: 'Booth'}
+//           ],
+//           order: 3,
+//           section: 'Local Exhaust Ventilation',
+//           header: true,
+//           headerTitle: 'Local Exhaust Ventilation'
+//         }),
+//         new TextboxQuestion({
+//           key: 'dilutionVentSize',
+//           label: 'Size:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Local Exhaust Ventilation'
+//         }),
+//         new TextboxQuestion({
+//           key: 'dilutionHoodCaptureVelocity',
+//           label: 'Hood Capture Velocity:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Local Exhaust Ventilation'
+//         }),
+//         new TextboxQuestion({
+//           key: 'dilutionHoodFlowRate',
+//           label: 'Hood Flow Rate:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Local Exhaust Ventilation'
+//         }),
+//         new TextboxQuestion({
+//           key: 'dilutionDuctVelocity',
+//           label: 'Duct Velocity:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Local Exhaust Ventilation'
+//         }),
+//
+//
+//     // General Dilution
+//         new TextboxQuestion({
+//           key: 'dilutionAirChangesperHour',
+//           label: 'Recommended Air Changes per Hour:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Local Exhaust Ventilation'
+//         }),
+//
+//
+//     // Protective Gloves
+//         new DropdownQuestion({
+//           key: 'protectiveGloveType',
+//           label: 'Chosen Protective Glove',
+//           options: [
+//             {key: 'Butyl Rubber',  value: 'Butyl Rubber'},
+//             {key: 'Natural Rubber',  value: 'Natural Rubber'},
+//             {key: 'Neoprene Rubber',   value: 'Neoprene Rubber'},
+//             {key: 'Nitrile Rubber',  value: 'Nitrile Rubber'},
+//             {key: 'Polyethylene (PE)',  value: 'Polyethylene (PE)'},
+//             {key: 'Polyvinylalcohol (PVAL)',   value: 'Polyvinylalcohol (PVAL)'},
+//             {key: 'Polyvinylchloride (PVC)',   value: 'Polyvinylchloride (PVC)'},
+//             {key: 'Viton ®',   value: 'Viton ®'},
+//             {key: 'Viton ®/Butyl',   value: 'Viton ®/Butyl'},
+//             {key: 'Barrier ® (PE/PA/PE',   value: 'Barrier ® (PE/PA/PE'},
+//             {key: 'Silver Shield/4H', value: 'Silver Shield/4H'}
+//           ],
+//           order: 3,
+//           section: 'Protective Gloves',
+//           header: true,
+//           headerTitle: 'Protective Gloves'
+//         }),
+//         new TextboxQuestion({
+//           key: 'protectiveGloveCAS',
+//           label: 'CAS#:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Protective Gloves'
+//         }),
+//         new TextboxQuestion({
+//           key: 'protectiveGloveConstituent',
+//           label: 'Constituent:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Protective Gloves'
+//         }),
+//
+//
+//     // Protective Clothing
+//         new DropdownQuestion({
+//           key: 'protectiveClothingType',
+//           label: 'Chosen protective Clothing',
+//           options: [
+//             {key: 'Trellchem®HPS',  value: 'Trellchem®HPS'},
+//             {key: 'Trellchem®VPS',  value: 'Trellchem®VPS'},
+//             {key: 'Tychem® QC',   value: 'Tychem® QC'},
+//             {key: 'Tychem® SL (Saranex®)',  value: 'Tychem® SL (Saranex®)'},
+//             {key: 'Tychem® TF',  value: 'Tychem® TF'},
+//             {key: 'Tychem® TP',   value: 'Tychem® TP'},
+//             {key: 'Tychem® C3',   value: 'Tychem® C3'},
+//             {key: 'Tychem® RC',   value: 'Tychem® RC'},
+//             {key: 'Tychem® TR',   value: 'Tychem® TR'},
+//             {key: 'Tychem® RF',   value: 'Tychem® RF'},
+//             {key: 'Tychem® CPF3', value: 'Tychem® CPF3'},
+//             {key: 'Tychem® F',   value: 'Tychem® F'},
+//             {key: 'Tychem® BR/LV',   value: 'Tychem® BR/LV'},
+//             {key: 'Tychem® Responder',   value: 'Tychem® Responder'},
+//             {key: 'Tychem® TK',   value: 'Tychem® TK'},
+//             {key: 'Tychem® TF',   value: 'Tychem® TF'}
+//           ],
+//           order: 3,
+//           section: 'Protective Clothing',
+//           header: true,
+//           headerTitle: 'Protective Clothing'
+//         }),
+//         new TextboxQuestion({
+//           key: 'protectiveClothingCAS',
+//           label: 'CAS#:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Protective Clothing'
+//         }),
+//         new TextboxQuestion({
+//           key: 'protectiveClothingConstituent',
+//           label: 'Constituent:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Protective Clothing'
+//         }),
+//
+//
+//
+//     // Respiratory Protection
+//         new DropdownQuestion({
+//           key: 'RespiratorType',
+//           label: 'Chosen Respirator Type',
+//           options: [
+//             {key: 'Air Purifying Respirator',  value: 'Air Purifying Respirator'},
+//             {key: 'Powered Air Purifying Respirator',  value: 'Powered Air Purifying Respirator	'},
+//             {key: 'Supplied Air',   value: 'Supplied Air'}
+//           ],
+//           order: 3,
+//           section: 'Respirator Protection',
+//           header: true,
+//           headerTitle: 'Respirator Protection'
+//         }),
+//         new DropdownQuestion({
+//           key: 'Respirator',
+//           label: 'Chosen Respirator',
+//           options: [
+//             {key: 'Quarter Dust Mask',  value: 'Quarter Dust Mask'},
+//             {key: 'Half Face',  value: 'Half Face'},
+//             {key: 'Full Face',   value: 'Full Face'},
+//             {key: 'Helmet/Hood',  value: 'Helmet/Hood'},
+//             {key: 'Half Face Continuous Flow/Pressure Demand',  value: 'Half Face Continuous Flow/Pressure Demand'},
+//             {key: 'Full Face Continuous Flow/Pressure Demand',   value: 'Full Face Continuous Flow/Pressure Demand'},
+//             {key: 'Helmet / Hood Continuous Flow',   value: 'Helmet / Hood Continuous Flow'},
+//             {key: 'SCBA',   value: 'SCBA'}
+//           ],
+//           order: 3,
+//           section: 'Respirator Protection'
+//         }),
+//         new TextboxQuestion({
+//           key: 'RespiratorCAS',
+//           label: 'CAS#:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Respirator Protection'
+//         }),
+//         new TextboxQuestion({
+//           key: 'RespiratorConstituent',
+//           label: 'Constituent:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Respirator Protection'
+//         }),
+//
+//
+//    // Direct Reading Exposure Monitoring
+//          new TextboxQuestion({
+//            key: 'DREMCAS',
+//            label: 'CAS #:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring',
+//            header: true,
+//            headerTitle: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREMConstituent',
+//            label: 'Constituent:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREMIonizationPotential',
+//            label: 'Ionization Potential:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_PIDCF',
+//            label: 'PID CF:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_LFL',
+//            label: 'LFL:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_UFL',
+//            label: 'UFL:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_LEL_CF',
+//            label: 'LEL CF:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_ColorimetricTubeChip',
+//            label: 'Colorimetric Tube/Chip:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//          new TextboxQuestion({
+//            key: 'DREM_Other',
+//            label: 'Other:',
+//            value: ' ',
+//            required: false,
+//            order: 2,
+//            section: 'Direct Reading Exposure Monitoring'
+//          }),
+//
+//
+//     // Exposure Data
+//         new TextboxQuestion({
+//           key: 'exposureDataCAS',
+//           label: 'CAS #:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Exposure Data',
+//           header: true,
+//           headerTitle: 'Exposure Data'
+//         }),
+//         new TextboxQuestion({
+//           key: 'exposureDataConstituent',
+//           label: 'Constituent:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Exposure Data'
+//         }),
+//         new TextboxQuestion({
+//           key: 'exposureDataModeledExposureResults',
+//           label: 'Modeled Exposure Results:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Exposure Data'
+//         }),
+//         new TextboxQuestion({
+//           key: 'exposureDataPredictiveExposureResults',
+//           label: 'Predictive Exposure Results:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Exposure Data'
+//         }),
+//         new TextboxQuestion({
+//           key: 'exposureDataObjectiveDataExposureResults',
+//           label: 'Objective Data Exposure Results:',
+//           value: ' ',
+//           required: false,
+//           order: 2,
+//           section: 'Exposure Data'
+//         }),
 
-// Constituents Table
-      new TextboxQuestion({
-        key: 'cas',
-        label: 'CAS#:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Constituents Table',
-        header: true,
-        headerTitle: 'Constituents Table'
-      }),
-      new TextboxQuestion({
-        key: 'constituentName',
-        label: 'Constituent Name:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Constituents Table'
-      }),
-      new TextboxQuestion({
-        key: 'physicalState',
-        label: 'Physical State:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Constituents Table'
-      }),
-      new TextboxQuestion({
-        key: 'percentOfChemical',
-        label: '% of chemical:',
-        options: [
-          {
-            label: '% of chemical:',
-            key: 'percentOfChemical-1',
-            min: '0',
-            max: '100',
-            step: '1'
-          },
-        ],
-        required: false,
-        order: 2,
-        section: 'Constituents Table'
-      }),
-      // Exposure Limits - Within the Constituents Table
-      //ACGIH
-      new TextboxQuestion({
-        key: 'ACGIH_TLV',
-        label: 'ACGIH TLV:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits',
-        header: true,
-        headerTitle: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'ACGIH_STEL',
-        label: 'ACGIH STEL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'ACGIH_CL',
-        label: 'ACGIH CL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'BEI',
-        label: 'BEI:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      // OSHA
-      new TextboxQuestion({
-        key: 'OSHA_PEL',
-        label: 'OSHA PEL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OSHA_STEL',
-        label: 'OSHA STEL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OSHA_CL',
-        label: 'OSHA CL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OSHA_EL',
-        label: 'OSHA EL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      //NIOSH
-      new TextboxQuestion({
-        key: 'NIOSH_REL',
-        label: 'NIOSH REL:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'NIOSH_IDLH',
-        label: 'NIOSH IDLH:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OdorThreshold',
-        label: 'Odor Threshold:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OSHA_Standard',
-        label: 'OSHA Standard:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'exposureLimitsHealthHazard',
-        label: 'Health Hazard:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'OSHA_AirSamplingMethod',
-        label: 'OSHA Air Sampling Method:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'NIOSH_AirSamplingMethod',
-        label: 'NIOSH Air Sampling Method:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
-      new TextboxQuestion({
-        key: 'bulkSamplingMethod',
-        label: 'Bulk Sampling Method:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Exposure Limits'
-      }),
 
-  // Work Conditions Table
-      new TextboxQuestion({
-        key: 'WorkSite',
-        label: 'Work Site:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions',
-        header: true,
-        headerTitle: 'Working Conditions'
-      }),
-      new RangeQuestion({
-        key: 'No_of_Workers',
-        label: 'No. of Workers:',
-        options: [
-          {
-            label: 'No. of Workers:',
-            key: 'No_of_Workers-1',
-            min: '1',
-            max: '100',
-            step: '1'
-          },
-        ],
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'spaceVolume',
-        label: 'Space Volume:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'roomVentIn',
-        label: 'Room Ventilation In:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'roomVentOut',
-        label: 'Room Ventilation Out:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new RangeQuestion({
-        key: 'workingTemperature',
-        label: 'Environment Temperature:',
-        options: [
-          {
-            label: 'Environment Temperature (°F):',
-            key: 'workingTemperature-1',
-            min: '-50',
-            max: '120',
-            step: '1'
-          },
-        ],
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new RangeQuestion({
-        key: 'workingHumidity',
-        label: 'Working Humidity:',
-        options: [
-          {
-            label: 'Working Humidity:',
-            key: 'workingHumidity-1',
-            min: '0',
-            max: '100',
-            step: '1'
-          },
-        ],
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new DropdownQuestion({
-        key: 'windDirection',
-        label: 'Wind Direction:',
-        options: [
-          {key: 'north',  value: 'North'},
-          {key: 'northwest',  value: 'North West'},
-          {key: 'northeast',   value: 'North East'},
-          {key: 'east',  value: 'East'},
-          {key: 'south',  value: 'South'},
-          {key: 'southeast',   value: 'South East'},
-          {key: 'southwest',   value: 'South West'},
-          {key: 'west',   value: 'West'}
-        ],
-        order: 3,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'windSpeed',
-        label: 'Wind Speed (mph):',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'atmoPressure',
-        label: 'Atm. Pressure:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'workPosition',
-        label: 'Work Position:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'employeePosition',
-        label: 'Employee Position:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'DFBZ',
-        label: 'Distance from Breathing Zone:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'exposureFrequency',
-        label: 'Frequency of Exposure:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-      new TextboxQuestion({
-        key: 'exposurePerDay',
-        label: 'Duration of Exposure Per Day:',
-        value: ' ',
-        required: false,
-        order: 2,
-        section: 'Working Conditions'
-      }),
-
-  // Task Table
-      //Task
-        // Material Fabrication
-          new TextboxQuestion({
-            key: 'generationRate',
-            label: 'Generation Rate (rods/hour) :',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table',
-            header: true,
-            headerTitle: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'metalType',
-            label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'materialThickness',
-            label: 'Thickness of the material (inches):',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'weldAreaWidth',
-            label: 'Width of weld area (inches):',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'weldAreaHeight',
-            label: 'Length of weld area (inches):',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'pipeDiameter',
-            label: 'Pipe Diameter (inches):',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'WeldPasses',
-            label: 'Number of Passes:',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'weldAmperage',
-            label: 'Welding Machine Amperage:',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-          new TextboxQuestion({
-            key: 'weldOther',
-            label: 'Other:',
-            value: ' ',
-            required: false,
-            order: 2,
-            section: 'Task Table'
-          }),
-
-      // Chemical Risk Ranking
-        new TextboxQuestion({
-          key: 'riskChemicalName',
-          label: 'Chemical Name:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking',
-          header: true,
-          headerTitle: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskChemicalID',
-          label: 'Chemical/Manf. ID:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskFlashPoint',
-          label: 'Flash Point:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskVaporPressure',
-          label: 'Vapor Pressure:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskEvaporationRate',
-          label: 'Evaporation Rate:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskPH',
-          label: 'pH:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'riskHealthHazard',
-          label: 'Health Hazard:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Chemical Risk Ranking'
-        }),
-
-    // Constituent Risk Ranking
-        new TextboxQuestion({
-          key: 'constituentChemicalName',
-          label: 'Chemical Name:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking',
-          header: true,
-          headerTitle: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentCAS',
-          label: 'CAS#:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentChemicalID',
-          label: 'Chemical/Manf. ID:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentFlashPoint',
-          label: 'Flash Point:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentVaporPressure',
-          label: 'Vapor Pressure:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentEvaporationRate',
-          label: 'Evaporation Rate:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentPH',
-          label: 'pH:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentGasVapor',
-          label: 'Gas and Vapor:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentMistParticulate',
-          label: 'Mist/Particulate:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'constituentHealthHazard',
-          label: 'Health Hazard:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Constituent Risk Ranking'
-        }),
-
-
-    // Task Risk Ranking
-        new TextboxQuestion({
-          key: 'taskWorkSite',
-          label: 'Work Site:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Task Risk Ranking',
-          header: true,
-          headerTitle: 'Task Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'taskSpaceVolume',
-          label: 'Space Volume:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Task Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'taskExposureFrequency',
-          label: 'Frequency of Exposure:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Task Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'taskDuration',
-          label: 'Duration:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Task Risk Ranking'
-        }),
-        new TextboxQuestion({
-          key: 'taskType',
-          label: 'Task Type:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Task Risk Ranking'
-        }),
-
-
-    // Local Exhaust Ventilation
-        new DropdownQuestion({
-          key: 'localExhaustVentilation',
-          label: 'Local Exhaust Ventilation Types ',
-          options: [
-            {key: 'Slot Hood Without Flange',  value: 'Slot Hood Without Flange'},
-            {key: 'Slot Hood With Flange',  value: 'Slot Hood With Flange'},
-            {key: 'Plain Opening Hood',   value: 'Plain Opening Hood'},
-            {key: 'Plain Multiple Slot Hood',  value: 'Plain Multiple Slot Hood'},
-            {key: 'Flange Multiple Slot Hood',  value: 'Flange Multiple Slot Hood'},
-            {key: 'Canopy Hood',   value: 'Canopy Hood'},
-            {key: 'Booth', value: 'Booth'}
-          ],
-          order: 3,
-          section: 'Local Exhaust Ventilation',
-          header: true,
-          headerTitle: 'Local Exhaust Ventilation'
-        }),
-        new TextboxQuestion({
-          key: 'dilutionVentSize',
-          label: 'Size:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Local Exhaust Ventilation'
-        }),
-        new TextboxQuestion({
-          key: 'dilutionHoodCaptureVelocity',
-          label: 'Hood Capture Velocity:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Local Exhaust Ventilation'
-        }),
-        new TextboxQuestion({
-          key: 'dilutionHoodFlowRate',
-          label: 'Hood Flow Rate:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Local Exhaust Ventilation'
-        }),
-        new TextboxQuestion({
-          key: 'dilutionDuctVelocity',
-          label: 'Duct Velocity:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Local Exhaust Ventilation'
-        }),
-
-
-    // General Dilution
-        new TextboxQuestion({
-          key: 'dilutionAirChangesperHour',
-          label: 'Recommended Air Changes per Hour:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Local Exhaust Ventilation'
-        }),
-
-
-    // Protective Gloves
-        new DropdownQuestion({
-          key: 'protectiveGloveType',
-          label: 'Chosen Protective Glove',
-          options: [
-            {key: 'Butyl Rubber',  value: 'Butyl Rubber'},
-            {key: 'Natural Rubber',  value: 'Natural Rubber'},
-            {key: 'Neoprene Rubber',   value: 'Neoprene Rubber'},
-            {key: 'Nitrile Rubber',  value: 'Nitrile Rubber'},
-            {key: 'Polyethylene (PE)',  value: 'Polyethylene (PE)'},
-            {key: 'Polyvinylalcohol (PVAL)',   value: 'Polyvinylalcohol (PVAL)'},
-            {key: 'Polyvinylchloride (PVC)',   value: 'Polyvinylchloride (PVC)'},
-            {key: 'Viton ®',   value: 'Viton ®'},
-            {key: 'Viton ®/Butyl',   value: 'Viton ®/Butyl'},
-            {key: 'Barrier ® (PE/PA/PE',   value: 'Barrier ® (PE/PA/PE'},
-            {key: 'Silver Shield/4H', value: 'Silver Shield/4H'}
-          ],
-          order: 3,
-          section: 'Protective Gloves',
-          header: true,
-          headerTitle: 'Protective Gloves'
-        }),
-        new TextboxQuestion({
-          key: 'protectiveGloveCAS',
-          label: 'CAS#:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Protective Gloves'
-        }),
-        new TextboxQuestion({
-          key: 'protectiveGloveConstituent',
-          label: 'Constituent:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Protective Gloves'
-        }),
-
-
-    // Protective Clothing
-        new DropdownQuestion({
-          key: 'protectiveClothingType',
-          label: 'Chosen protective Clothing',
-          options: [
-            {key: 'Trellchem®HPS',  value: 'Trellchem®HPS'},
-            {key: 'Trellchem®VPS',  value: 'Trellchem®VPS'},
-            {key: 'Tychem® QC',   value: 'Tychem® QC'},
-            {key: 'Tychem® SL (Saranex®)',  value: 'Tychem® SL (Saranex®)'},
-            {key: 'Tychem® TF',  value: 'Tychem® TF'},
-            {key: 'Tychem® TP',   value: 'Tychem® TP'},
-            {key: 'Tychem® C3',   value: 'Tychem® C3'},
-            {key: 'Tychem® RC',   value: 'Tychem® RC'},
-            {key: 'Tychem® TR',   value: 'Tychem® TR'},
-            {key: 'Tychem® RF',   value: 'Tychem® RF'},
-            {key: 'Tychem® CPF3', value: 'Tychem® CPF3'},
-            {key: 'Tychem® F',   value: 'Tychem® F'},
-            {key: 'Tychem® BR/LV',   value: 'Tychem® BR/LV'},
-            {key: 'Tychem® Responder',   value: 'Tychem® Responder'},
-            {key: 'Tychem® TK',   value: 'Tychem® TK'},
-            {key: 'Tychem® TF',   value: 'Tychem® TF'}
-          ],
-          order: 3,
-          section: 'Protective Clothing',
-          header: true,
-          headerTitle: 'Protective Clothing'
-        }),
-        new TextboxQuestion({
-          key: 'protectiveClothingCAS',
-          label: 'CAS#:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Protective Clothing'
-        }),
-        new TextboxQuestion({
-          key: 'protectiveClothingConstituent',
-          label: 'Constituent:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Protective Clothing'
-        }),
-
-
-
-    // Respiratory Protection
-        new DropdownQuestion({
-          key: 'RespiratorType',
-          label: 'Chosen Respirator Type',
-          options: [
-            {key: 'Air Purifying Respirator',  value: 'Air Purifying Respirator'},
-            {key: 'Powered Air Purifying Respirator',  value: 'Powered Air Purifying Respirator	'},
-            {key: 'Supplied Air',   value: 'Supplied Air'}
-          ],
-          order: 3,
-          section: 'Respirator Protection',
-          header: true,
-          headerTitle: 'Respirator Protection'
-        }),
-        new DropdownQuestion({
-          key: 'Respirator',
-          label: 'Chosen Respirator',
-          options: [
-            {key: 'Quarter Dust Mask',  value: 'Quarter Dust Mask'},
-            {key: 'Half Face',  value: 'Half Face'},
-            {key: 'Full Face',   value: 'Full Face'},
-            {key: 'Helmet/Hood',  value: 'Helmet/Hood'},
-            {key: 'Half Face Continuous Flow/Pressure Demand',  value: 'Half Face Continuous Flow/Pressure Demand'},
-            {key: 'Full Face Continuous Flow/Pressure Demand',   value: 'Full Face Continuous Flow/Pressure Demand'},
-            {key: 'Helmet / Hood Continuous Flow',   value: 'Helmet / Hood Continuous Flow'},
-            {key: 'SCBA',   value: 'SCBA'}
-          ],
-          order: 3,
-          section: 'Respirator Protection'
-        }),
-        new TextboxQuestion({
-          key: 'RespiratorCAS',
-          label: 'CAS#:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Respirator Protection'
-        }),
-        new TextboxQuestion({
-          key: 'RespiratorConstituent',
-          label: 'Constituent:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Respirator Protection'
-        }),
-
-
-   // Direct Reading Exposure Monitoring
-         new TextboxQuestion({
-           key: 'DREMCAS',
-           label: 'CAS #:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring',
-           header: true,
-           headerTitle: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREMConstituent',
-           label: 'Constituent:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREMIonizationPotential',
-           label: 'Ionization Potential:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_PIDCF',
-           label: 'PID CF:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_LFL',
-           label: 'LFL:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_UFL',
-           label: 'UFL:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_LEL_CF',
-           label: 'LEL CF:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_ColorimetricTubeChip',
-           label: 'Colorimetric Tube/Chip:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-         new TextboxQuestion({
-           key: 'DREM_Other',
-           label: 'Other:',
-           value: ' ',
-           required: false,
-           order: 2,
-           section: 'Direct Reading Exposure Monitoring'
-         }),
-
-
-    // Exposure Data
-        new TextboxQuestion({
-          key: 'exposureDataCAS',
-          label: 'CAS #:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Exposure Data',
-          header: true,
-          headerTitle: 'Exposure Data'
-        }),
-        new TextboxQuestion({
-          key: 'exposureDataConstituent',
-          label: 'Constituent:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Exposure Data'
-        }),
-        new TextboxQuestion({
-          key: 'exposureDataModeledExposureResults',
-          label: 'Modeled Exposure Results:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Exposure Data'
-        }),
-        new TextboxQuestion({
-          key: 'exposureDataPredictiveExposureResults',
-          label: 'Predictive Exposure Results:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Exposure Data'
-        }),
-        new TextboxQuestion({
-          key: 'exposureDataObjectiveDataExposureResults',
-          label: 'Objective Data Exposure Results:',
-          value: ' ',
-          required: false,
-          order: 2,
-          section: 'Exposure Data'
-        }),
+// End of commenting out for testing
 
 
       //

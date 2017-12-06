@@ -16,6 +16,7 @@ import { InitalSettingsPage } from '../pages/inital-settings/inital-settings';
 import { ChemicalsPage } from '../pages/chemicals/chemicals';
 import { AddChemicalsPage } from '../pages/add-chemicals/add-chemicals';
 import { AssessmentsPage } from '../pages/assessments/assessments';
+import { AddAssessmentPage } from '../pages/add-assessment/add-assessment';
 import { FaqPage } from '../pages/faq/faq';
 import { AddFaqPage } from '../pages/add-faq/add-faq';
 
@@ -55,7 +56,7 @@ export class ConferenceApp {
   loggedInPages: PageInterface[] = [
     { title: 'Dashboard', component: DashboardPage, icon: 'list-box',  color: 'primary' },
     { title: 'Chemicals', component: ChemicalsPage, icon: 'water',  color: 'primary'},
-    { title: 'New Assessment', component: AssessmentsPage, icon: 'arrow-forward',  color: 'secondary' },
+    { title: 'New Assessment', component: AddAssessmentPage, icon: 'arrow-forward',  color: 'secondary' },
     { title: 'Constituent Table', component: AssessmentsPage, icon: 'arrow-forward',  color: 'secondary' },
     { title: 'Physical', component: DashboardPage, icon: 'medkit',  color: 'primary'},
     { title: 'New Assessment', component: DashboardPage, icon: 'arrow-forward',  color: 'secondary' },

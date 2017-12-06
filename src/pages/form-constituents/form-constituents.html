@@ -1,0 +1,23 @@
+<!--
+  Generated template for the FormConstituentsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-navbar>
+    <ion-title> Add Constituents </ion-title>
+  </ion-navbar>
+
+  <ion-list>
+    <dynamic-form *ngIf="questions" [questions]="questions"></dynamic-form>
+    <div *ngIf="!questions">Loading...</div>
+  </ion-list>
+
+</ion-content>

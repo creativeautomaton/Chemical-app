@@ -29,6 +29,12 @@ import { AddChemicalsPage } from '../pages/add-chemicals/add-chemicals';
 import { AddAssessmentPage } from '../pages/add-assessment/add-assessment';
 import { AssessmentDetailPage } from '../pages/assessment-detail/assessment-detail';
 
+//Form Parts
+import { FormAssessmentBasicPage } from '../pages/form-assessment-basic/form-assessment-basic';
+import { FormConstituentsPage } from '../pages/form-constituents/form-constituents';
+import { FormAssessmentTasksPage } from '../pages/form-assessment-tasks/form-assessment-tasks';
+
+
 //Providers
 import { AuthService } from '../providers/auth-service';
 import { AppData } from '../providers/app-data';
@@ -70,7 +76,10 @@ export const firebaseConfig = {
     AddChemicalsPage,
     AddAssessmentPage,
     DashboardPage,
-    AssessmentDetailPage
+    AssessmentDetailPage,
+    FormAssessmentBasicPage,
+    FormConstituentsPage,
+    FormAssessmentTasksPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp),
@@ -96,7 +105,10 @@ export const firebaseConfig = {
     AssessmentsPage,
     AddAssessmentPage,
     DashboardPage,
-    AssessmentDetailPage
+    AssessmentDetailPage,
+    FormAssessmentBasicPage,
+    FormConstituentsPage,
+     FormAssessmentTasksPage 
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  AuthService, AppData, UserData, Storage]
 })
