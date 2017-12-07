@@ -10,7 +10,7 @@ import { FormAssessmentTasksPage } from '../form-assessment-tasks/form-assessmen
   selector: 'page-add-assessment',
   templateUrl: 'add-assessment.html'
 })
-export class AddAssessmentPage { 
+export class AddAssessmentPage {
   // set the root pages for each tab
   tab1Root: any = FormAssessmentBasicPage;
   tab2Root: any = FormConstituentsPage;
@@ -22,7 +22,7 @@ export class AddAssessmentPage {
       public navCtrl: NavController,
       public navParams: NavParams
   ) {
-    this.mySelectedIndex = navParams.data.tabIndex || 0;
+    this.mySelectedIndex = navParams.data.tabIndex || 0; 
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddAssessmentPage');

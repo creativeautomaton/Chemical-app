@@ -190,18 +190,6 @@ export class ChemicalQuestionService {
       // questions.sort((a, b) => a.order - b.order)
       questions.sort(function(a,b) {return (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0);} )
     );
-
-
-    // array.sort((a: any, b: any) => {
-    //   if (a[field] < b[field]) {
-    //     return -1;
-    //   } else if (a[field] > b[field]) {
-    //     return 1;
-    //   } else {
-    //     return 0;
-    //   }
-    // });
-    // return array;
   }
 
   getChemicalQuestions(): Promise<QuestionBase<any>[]> {
@@ -211,16 +199,16 @@ export class ChemicalQuestionService {
   }
 }
 
-export class AssessmentQuestionService {
+export class AssessmentBasicInfoQuestionService {
   // Todo: get from a remote source of question metadata
   getQuestions(): Promise<QuestionBase<any>[]> {
 
     let questions: QuestionBase<any>[] = [
 
        new QuestionID ({
-          key: 'assessments',
+          key: 'basicInfo',
           value: 'false'
-        }),
+      }),
 
       new TextboxQuestion({
         key: 'title',
@@ -318,79 +306,84 @@ export class AssessmentQuestionService {
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
           key: 'boiling',
           label: 'Boiling Point (°F):',
-          options: [
-            {
-              label: 'Boiling Point (°F)',
-              key: 'boiling-1',
-              min: '0',
-              max: '800',
-              step: '1'
-            },
-          ],
+          // options: [
+          //   {
+          //     label: 'Boiling Point (°F)',
+          //     key: 'boiling-1',
+          //     min: '0',
+          //     max: '800',
+          //     step: '1'
+          //   },
+          // ],
+          value: ' ',
           order: 2,
           section: 'Chemical Table',
         }),
-      new RangeQuestion({
+      new TextboxQuestion({
           key: 'freezing',
           label: 'Freezing Point (°F):',
-          options: [
-            {
-              label: 'freezing Range',
-              key: 'freezing-1',
-              min: '-250',
-              max: '0',
-              step: '1'
-            },
-          ],
+          // options: [
+          //   {
+          //     label: 'freezing Range',
+          //     key: 'freezing-1',
+          //     min: '-250',
+          //     max: '0',
+          //     step: '1'
+          //   },
+          // ],
+          value: ' ',
           order: 2,
           section: 'Chemical Table',
         }),
-      new RangeQuestion({
+      new TextboxQuestion({
           key: 'solubility',
           label: 'Solubility (%):',
-          options: [
-            {
-              label: 'Solubility (%):',
-              key: 'solubility-1',
-              min: '0',
-              max: '100',
-              step: '0.5'
-            },
-          ],
+          // options: [
+          //   {
+          //     label: 'Solubility (%):',
+          //     key: 'solubility-1',
+          //     min: '0',
+          //     max: '100',
+          //     step: '1'
+          //   },
+          // ],
+          value: ' ',
           order: 2,
           section: 'Chemical Table',
         }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'evaporationRate',
         label: 'Evaporation Rate:',
-        options: [
-          {
-            label: 'Evaporation Rate (%):',
-            key: 'evaporationRate-1',
-            min: '0',
-            max: '100',
-            step: '1'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Evaporation Rate (%):',
+        //     key: 'evaporationRate-1',
+        //     min: '0',
+        //     max: '100',
+        //     step: '1'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'upperFlammability',
         label: 'Upper Flammability (%):',
-        options: [
-          {
-            label: 'Upper Flammability (%):',
-            key: 'upperFlammability-1',
-            min: '0',
-            max: '100',
-            step: '1'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Upper Flammability (%):',
+        //     key: 'upperFlammability-1',
+        //     min: '0',
+        //     max: '100',
+        //     step: '1'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
@@ -419,66 +412,70 @@ export class AssessmentQuestionService {
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'molWeight',
         label: 'Molecular Weight (g/mol):',
-        options: [
-          {
-            label: 'Molecular Weight (g/mol):',
-            key: 'molWeight-1',
-            min: '10',
-            max: '1000',
-            step: '5'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Molecular Weight (g/mol):',
+        //     key: 'molWeight-1',
+        //     min: '10',
+        //     max: '100',
+        //     step: '5'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'flashPoint',
         label: 'Flash Point (°F):',
-        options: [
-          {
-            label: 'Flash Point (°F):',
-            key: 'flashPoint-1',
-            min: '-50',
-            max: '1000',
-            step: '1'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Flash Point (°F):',
+        //     key: 'flashPoint-1',
+        //     min: '-50',
+        //     max: '100',
+        //     step: '1'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'meltingPoint',
         label: 'Melting Point (°F):',
-        options: [
-          {
-            label: 'Melting Point (°F):',
-            key: 'meltingPoint-1',
-            min: '-400',
-            max: '5000',
-            step: '1'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Melting Point (°F):',
+        //     key: 'meltingPoint-1',
+        //     min: '-400',
+        //     max: '500',
+        //     step: '1'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
       }),
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'vaporPressure',
         label: 'Vapor Pressure (mm/Hg):',
-        options: [
-          {
-            label: 'Vapor Pressure (mm/Hg):',
-            key: 'vaporPressure-1',
-            min: '1',
-            max: '3000',
-            step: '10'
-          },
-        ],
+        // options: [
+        //   {
+        //     label: 'Vapor Pressure (mm/Hg):',
+        //     key: 'vaporPressure-1',
+        //     min: '1',
+        //     max: '300',
+        //     step: '10'
+        //   },
+        // ],
+        value: ' ',
         required: false,
         order: 2,
         section: 'Chemical Table'
@@ -500,13 +497,88 @@ export class AssessmentQuestionService {
         section: 'Chemical Table'
       }),
 
-      new RangeQuestion({
+      new TextboxQuestion({
         key: 'lowerFlammability',
         label: 'Lower Flammability (%):',
+        value: ' ',
+        // options: [
+        //   {
+        //     label: 'Lower Flammability (%):',
+        //     key: 'lowerFlammability-1',
+        //     min: '0',
+        //     max: '100',
+        //     step: '1'
+        //   },
+        // ],
+        required: false,
+        order: 2,
+        section: 'Chemical Table'
+      }),
+      new QuestionID ({
+         key: 'action',
+         value: 'saved',
+         action: 'save'
+      }),
+
+
+    ];
+
+    return Promise.resolve(questions.sort((a, b) => a.order - b.order));
+  }
+
+  getAssessmentBasicInfoQuestions(): Promise<QuestionBase<any>[]> {
+    return new Promise<QuestionBase<any>[]>(resolve =>
+      setTimeout(resolve, 1350)) // delay 2 seconds
+      .then(() => this.getQuestions());
+  }
+}
+
+export class AssessmentConstituentsQuestionService {
+
+  // Todo: get from a remote source of question metadata
+  getQuestions(): Promise<QuestionBase<any>[]> {
+
+    let questions: QuestionBase<any>[] = [
+
+       new QuestionID ({
+          key: 'constituents',
+          value: 'false'
+       }),
+
+// Constituents Table
+      new TextboxQuestion({
+        key: 'cas',
+        label: 'CAS#:',
+        value: ' ',
+        required: false,
+        order: 2,
+        section: 'Constituents Table',
+        // header: true,
+        // headerTitle: 'Constituents Table'
+      }),
+      new TextboxQuestion({
+        key: 'constituentName',
+        label: 'Constituent Name:',
+        value: ' ',
+        required: false,
+        order: 2,
+        section: 'Constituents Table'
+      }),
+      new TextboxQuestion({
+        key: 'physicalState',
+        label: 'Physical State:',
+        value: ' ',
+        required: false,
+        order: 2,
+        section: 'Constituents Table'
+      }),
+      new TextboxQuestion({
+        key: 'percentOfChemical',
+        label: '% of chemical:',
         options: [
           {
-            label: 'Lower Flammability (%):',
-            key: 'lowerFlammability-1',
+            label: '% of chemical:',
+            key: 'percentOfChemical-1',
             min: '0',
             max: '100',
             step: '1'
@@ -514,52 +586,48 @@ export class AssessmentQuestionService {
         ],
         required: false,
         order: 2,
-        section: 'Chemical Table'
+        section: 'Constituents Table'
       }),
-//
-// // Constituents Table
-//       new TextboxQuestion({
-//         key: 'cas',
-//         label: 'CAS#:',
-//         value: ' ',
-//         required: false,
-//         order: 2,
-//         section: 'Constituents Table',
-//         header: true,
-//         headerTitle: 'Constituents Table'
-//       }),
-//       new TextboxQuestion({
-//         key: 'constituentName',
-//         label: 'Constituent Name:',
-//         value: ' ',
-//         required: false,
-//         order: 2,
-//         section: 'Constituents Table'
-//       }),
-//       new TextboxQuestion({
-//         key: 'physicalState',
-//         label: 'Physical State:',
-//         value: ' ',
-//         required: false,
-//         order: 2,
-//         section: 'Constituents Table'
-//       }),
-//       new TextboxQuestion({
-//         key: 'percentOfChemical',
-//         label: '% of chemical:',
-//         options: [
-//           {
-//             label: '% of chemical:',
-//             key: 'percentOfChemical-1',
-//             min: '0',
-//             max: '100',
-//             step: '1'
-//           },
-//         ],
-//         required: false,
-//         order: 2,
-//         section: 'Constituents Table'
-//       }),
+      new QuestionID ({
+         action: 'save'
+      }),
+    ];
+
+    return Promise.resolve(questions.sort((a, b) => a.order - b.order));
+  }
+
+  getAssessmentConstituentsQuestions(): Promise<QuestionBase<any>[]> {
+    return new Promise<QuestionBase<any>[]>(resolve =>
+      setTimeout(resolve, 1350)) // delay 2 seconds
+      .then(() => this.getQuestions());
+  }
+}
+
+export class AssessmentTasksQuestionService {
+  // Todo: get from a remote source of question metadata
+  getQuestions(): Promise<QuestionBase<any>[]> {
+
+    let questions: QuestionBase<any>[] = [
+
+       new QuestionID ({
+            key: 'assessmentTasks',
+            value: 'false'
+          }),
+        new QuestionID ({
+           action: 'submit'
+        }),
+
+    ];
+
+    return Promise.resolve(questions.sort((a, b) => a.order - b.order));
+  }
+
+  getAssessmentTasksQuestions(): Promise<QuestionBase<any>[]> {
+    return new Promise<QuestionBase<any>[]>(resolve =>
+      setTimeout(resolve, 1350)) // delay 2 seconds
+      .then(() => this.getQuestions());
+  }
+}
 //       // Exposure Limits - Within the Constituents Table
 //       //ACGIH
 //       new TextboxQuestion({
@@ -1072,8 +1140,8 @@ export class AssessmentQuestionService {
 //           order: 2,
 //           section: 'Constituent Risk Ranking'
 //         }),
-//
-//
+
+
 //     // Task Risk Ranking
 //         new TextboxQuestion({
 //           key: 'taskWorkSite',
@@ -1450,17 +1518,7 @@ export class AssessmentQuestionService {
       //   order: 2
       // })
 
-    ];
 
-    return Promise.resolve(questions.sort((a, b) => a.order - b.order));
-  }
-
-  getAssessmentQuestions(): Promise<QuestionBase<any>[]> {
-    return new Promise<QuestionBase<any>[]>(resolve =>
-      setTimeout(resolve, 1350)) // delay 2 seconds
-      .then(() => this.getQuestions());
-  }
-}
 
 export class FaqQuestionService {
   // Todo: get from a remote source of question metadata

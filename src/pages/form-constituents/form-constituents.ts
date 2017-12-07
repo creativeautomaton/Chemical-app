@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AssessmentConstituentsQuestionService } from '../../dynamicForm/services/question.service';
 
-/*
-  Generated class for the FormConstituentsPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-form-constituents',
-  templateUrl: 'form-constituents.html'
+  templateUrl: 'form-constituents.html',
+  providers:  [AssessmentConstituentsQuestionService]
 })
 export class FormConstituentsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  questions: any[];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public service: AssessmentConstituentsQuestionService
+  ) { 
+    service.getAssessmentConstituentsQuestions().then(questions => this.questions = questions);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormConstituentsPage');

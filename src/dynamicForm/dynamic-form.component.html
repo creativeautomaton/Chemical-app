@@ -1,15 +1,15 @@
 
 
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="form">
-
+    <form [formGroup]="form">
+  <!-- old way   <form (ngSubmit)="onSubmit()" [formGroup]="form">  -->
     <ion-list>
       <div *ngFor="let question of questions;  let i = index;"  >
         <div  *ngIf="question.section == 'User Information'"  >
-            <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)"  >
+            <!-- <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)"  >
                   <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
                   <h2>   {{question.Section}}  </h2>
-            </ion-item-divider>
+            </ion-item-divider> -->
              <!-- [ngClass]="{hide: isGroupShown(i)}" -->
             <div *ngIf="question.section"   [ngClass]="question.section"  >
               <df-question [question]="question" [form]="form"  ></df-question>
@@ -19,7 +19,7 @@
       <div *ngFor="let question of questions;  let i = last;"  >
         <div  *ngIf="question.section == 'Chemical Table'" >
             <ion-item-divider color="dark"  *ngIf="question.header == true"  text-wrap (click)="toggleGroup(i)" >
-                  <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+                  <!-- <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon> -->
                   <h2>   {{question.section}}</h2>
             </ion-item-divider>
             <div  *ngIf="question.section" [ngClass]="question.section" >
@@ -172,9 +172,20 @@
         </div>
       </div>
 
-      <ion-item>
-        <button ion-button large block [disabled]="!form.valid"> Save </button>
-      </ion-item>
+ <!--  Wether to save and move to next qestion or to submit form and other questions -->
+   <div *ngFor="let question of questions;"  >
+      <div *ngIf="question.action == 'save'">
+        <ion-item>
+          <button ion-button large block [disabled]="!form.valid" (click)="onSave()"> Next </button>
+        </ion-item>
+      </div>
+      <div *ngIf="question.action == 'submit'" >
+        <ion-item>
+          <button ion-button large block [disabled]="!form.valid" (click)="onSubmit()"> Submit </button>
+        </ion-item>
+      </div>
+   </div>
+
     </ion-list>
 
   </form>

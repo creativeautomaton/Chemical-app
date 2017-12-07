@@ -50,7 +50,7 @@ export class AssessmentsPage {
           //  this.assessments = assessmentData.filter((filter) => {
           //     return filter.type === "device";
           //  });
-           console.log(assessmentData);
+           // console.log(assessmentData);
          });
     }
 
@@ -88,7 +88,7 @@ export class AssessmentsPage {
     viewAssessmentDetails(assessmentData, keys){
       console.log(keys);
       console.log(assessmentData);
-     
+
       let modal = this.modalCtrl.create(AssessmentDetailPage, {assessmentDetail: assessmentData});
         modal.present();
 

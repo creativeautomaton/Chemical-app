@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AssessmentTasksQuestionService } from '../../dynamicForm/services/question.service';
 
-/*
-  Generated class for the FormAssessmentTasksPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-form-assessment-tasks',
-  templateUrl: 'form-assessment-tasks.html'
+  templateUrl: 'form-assessment-tasks.html',
+  providers:  [AssessmentTasksQuestionService]
 })
 export class FormAssessmentTasksPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  questions: any[];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public service: AssessmentTasksQuestionService
+  ) {
+    service.getAssessmentTasksQuestions().then(questions => this.questions = questions);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormAssessmentTasksPage');

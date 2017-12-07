@@ -9,6 +9,7 @@ export class QuestionBase<T>{
   section: string;
   header: boolean;
   headerTitle: string;
+  action: string;
   constructor(options: {
       value?: T,
       key?: string,
@@ -20,6 +21,7 @@ export class QuestionBase<T>{
       section?: string;
       header?: boolean;
       headerTitle?: string;
+      action?: string;
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -31,5 +33,6 @@ export class QuestionBase<T>{
     this.section = options.section || '';
     this.header = !!options.header;
     this.headerTitle = options.headerTitle || '';
+    this.action = options.action || '';
   }
 }
