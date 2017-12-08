@@ -22,9 +22,11 @@ export class AddAssessmentPage {
       public navCtrl: NavController,
       public navParams: NavParams
   ) {
-    this.mySelectedIndex = navParams.data.tabIndex || 0; 
+    this.mySelectedIndex = navParams.data.tabIndex || 0;
   }
   ionViewDidLoad() {
+    // Store
+    localStorage.setItem("currentData", null);
     console.log('ionViewDidLoad AddAssessmentPage');
   }
   //  dismiss() {

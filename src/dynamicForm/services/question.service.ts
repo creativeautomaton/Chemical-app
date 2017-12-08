@@ -207,7 +207,7 @@ export class AssessmentBasicInfoQuestionService {
 
        new QuestionID ({
           key: 'basicInfo',
-          value: 'false'
+          value: 'basicInfo'
       }),
 
       new TextboxQuestion({
@@ -542,7 +542,7 @@ export class AssessmentConstituentsQuestionService {
 
        new QuestionID ({
           key: 'constituents',
-          value: 'false'
+          value: 'constituents'
        }),
 
 // Constituents Table
@@ -589,7 +589,7 @@ export class AssessmentConstituentsQuestionService {
         section: 'Constituents Table'
       }),
       new QuestionID ({
-         action: 'save'
+         action: 'add'
       }),
     ];
 
@@ -611,11 +611,88 @@ export class AssessmentTasksQuestionService {
 
        new QuestionID ({
             key: 'assessmentTasks',
-            value: 'false'
+            value: 'assessmentTasks'
           }),
         new QuestionID ({
-           action: 'submit'
+           action: 'add'
         }),
+       // Task Table
+        //Task
+          // Material Fabrication
+            new TextboxQuestion({
+              key: 'generationRate',
+              label: 'Generation Rate (rods/hour) :',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table',
+              header: true,
+              headerTitle: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'metalType',
+              label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'materialThickness',
+              label: 'Thickness of the material (inches):',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'weldAreaWidth',
+              label: 'Width of weld area (inches):',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'weldAreaHeight',
+              label: 'Length of weld area (inches):',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'pipeDiameter',
+              label: 'Pipe Diameter (inches):',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'WeldPasses',
+              label: 'Number of Passes:',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'weldAmperage',
+              label: 'Welding Machine Amperage:',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
+            new TextboxQuestion({
+              key: 'weldOther',
+              label: 'Other:',
+              value: ' ',
+              required: false,
+              order: 2,
+              section: 'Task Table'
+            }),
 
     ];
 
@@ -919,83 +996,6 @@ export class AssessmentTasksQuestionService {
 //         section: 'Working Conditions'
 //       }),
 //
-//   // Task Table
-//       //Task
-//         // Material Fabrication
-//           new TextboxQuestion({
-//             key: 'generationRate',
-//             label: 'Generation Rate (rods/hour) :',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table',
-//             header: true,
-//             headerTitle: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'metalType',
-//             label: 'Type of Metal Being Welded(Will Enter More at a Later Time):',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'materialThickness',
-//             label: 'Thickness of the material (inches):',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'weldAreaWidth',
-//             label: 'Width of weld area (inches):',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'weldAreaHeight',
-//             label: 'Length of weld area (inches):',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'pipeDiameter',
-//             label: 'Pipe Diameter (inches):',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'WeldPasses',
-//             label: 'Number of Passes:',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'weldAmperage',
-//             label: 'Welding Machine Amperage:',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
-//           new TextboxQuestion({
-//             key: 'weldOther',
-//             label: 'Other:',
-//             value: ' ',
-//             required: false,
-//             order: 2,
-//             section: 'Task Table'
-//           }),
 //
 //       // Chemical Risk Ranking
 //         new TextboxQuestion({

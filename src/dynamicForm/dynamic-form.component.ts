@@ -29,7 +29,8 @@ export class DynamicFormComponent implements OnInit {
   addObservable: FirebaseListObservable<any>;
   assessmentData:  any[];
   currentAssessmentData: any[];
-
+  addedConstituents: any[];
+  addedAssessmentTasks: any[];
   constructor(
     private qcs: QuestionControlService,
      public toastCtrl: ToastController,
@@ -49,6 +50,8 @@ export class DynamicFormComponent implements OnInit {
     console.log(this.questions);
     console.log(this.form);
     this.currentAssessmentData = [];
+    this.addedConstituents = [];
+    this.addedAssessmentTasks = [];
     this.assessmentData =  [];
 
      this.appData.getAssessments().then(
@@ -217,20 +220,39 @@ export class DynamicFormComponent implements OnInit {
   }
   onSave() {
      let formKey = this.questions[0].key;
-     let getCurrent = localStorage.getItem(formKey);
-     this.payLoad = JSON.stringify(this.form.value);
+     this.payLoad = this.form.value;
 
-     let currentData = "{" + formKey + " : " + this.payLoad + "}";
-     
-     // Store
-     localStorage.setItem("currentData",  currentData);
-
-      // Retrieve
-      // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-
-     // currentData.push({"basicInfo":  this.payLoad});
-     // console.log(this.currentAssessmentData);
+     if(formKey == "basicInfo"){
+         let currentData = { "basicInfo": this.payLoad };
+         localStorage.removeItem("basicInfo");
+         localStorage.setItem("basicInfo", JSON.stringify(this.payLoad) );
+     }
+     if(formKey == "constituents"){
+         // let conName = this.form.value[2];
+         this.addedConstituents.push( this.payLoad);
+         let currentData = { "constituents": this.payLoad };
+         localStorage.setItem("constituents", JSON.stringify(this.addedConstituents) );
+     }
+     if(formKey == "assessmentTasks"){
+       this.addedAssessmentTasks.push( this.payLoad);
+       let currentData = { "assessmentTasks": this.payLoad };
+       localStorage.setItem("assessmentTasks", JSON.stringify(this.addedAssessmentTasks) );
+     }
   }
+
+ //  addEntry(formKey, formData) {
+ //     // Parse any JSON previously stored in allEntries
+ //     var existingData = JSON.parse(localStorage.getItem("currentData"));
+ //     if(existingEntries == null) existingEntries = [];
+ //     var entry = {
+ //         formKey: formData
+ //     };
+ //     localStorage.setItem(formKey, JSON.stringify(entry));
+ //     // Save allEntries back to local storage
+ //     existingEntries.push(entry);
+ //     localStorage.setItem("currentData", JSON.stringify(existingEntries));
+ // }
+
   onSubmit() {
         this.payLoad = JSON.stringify(this.form.value);
 
@@ -244,6 +266,7 @@ export class DynamicFormComponent implements OnInit {
        this.viewCtrl.dismiss();
        // this.navCtrl.push(AssessmentsPage);
    }
+
 
 
    toggleGroup(group) {
