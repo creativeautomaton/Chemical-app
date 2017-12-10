@@ -85,12 +85,16 @@ export class AssessmentsPage {
               actionSheet.present();
     }
 
-    viewAssessmentDetails(assessmentData, keys){
-      console.log(keys);
-      console.log(assessmentData);
+    viewAssessmentDetails(key){
+      console.log(key);
+      console.log(this.assessments);
+       let viewData = this.assessments.filter((filter) => {
+         return filter.key === key;
+      });
+      console.log(viewData);
 
-      let modal = this.modalCtrl.create(AssessmentDetailPage, {assessmentDetail: assessmentData});
-        modal.present();
+      // let modal = this.modalCtrl.create(AssessmentDetailPage, {assessmentDetail: assessmentData});
+      //   modal.present();
 
           // this.appData.getAssessments().then(
           //   assessmentData => {

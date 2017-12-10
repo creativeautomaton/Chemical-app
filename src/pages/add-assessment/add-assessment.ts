@@ -5,6 +5,7 @@ import { NavController, NavParams, ModalController, ViewController, Platform } f
 import { FormAssessmentBasicPage } from '../form-assessment-basic/form-assessment-basic';
 import { FormConstituentsPage } from '../form-constituents/form-constituents';
 import { FormAssessmentTasksPage } from '../form-assessment-tasks/form-assessment-tasks';
+import { FormAssessmentReviewPage } from '../form-review/form-review';
 
 @Component({
   selector: 'page-add-assessment',
@@ -15,6 +16,7 @@ export class AddAssessmentPage {
   tab1Root: any = FormAssessmentBasicPage;
   tab2Root: any = FormConstituentsPage;
   tab3Root: any = FormAssessmentTasksPage;
+  tab4Root: any = FormAssessmentReviewPage;
   mySelectedIndex: number;
 
   constructor(

@@ -2,7 +2,7 @@ import { Component, Input, OnInit }  from '@angular/core';
 import { FormGroup }                 from '@angular/forms';
 import { QuestionBase }              from './models/question-base';
 import { QuestionControlService }    from './services/question-control.service';
-import { NavController, NavParams, ModalController, ToastController, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ToastController, ViewController, Events } from 'ionic-angular';
 
 import { AppData } from '../providers/app-data';
 import { UserData } from '../providers/user-data';
@@ -31,6 +31,9 @@ export class DynamicFormComponent implements OnInit {
   currentAssessmentData: any[];
   addedConstituents: any[];
   addedAssessmentTasks: any[];
+  assessmentTerm: boolean;
+  completedAssessment: any[];
+
   constructor(
     private qcs: QuestionControlService,
      public toastCtrl: ToastController,
@@ -40,7 +43,8 @@ export class DynamicFormComponent implements OnInit {
      public modalCtrl: ModalController,
      public af: AngularFire,
      public auth$: AuthService,
-     public viewCtrl: ViewController
+     public viewCtrl: ViewController,
+     public events: Events
   ) {  }
 
   ngOnInit() {
@@ -52,8 +56,10 @@ export class DynamicFormComponent implements OnInit {
     this.currentAssessmentData = [];
     this.addedConstituents = [];
     this.addedAssessmentTasks = [];
-    this.assessmentData =  [];
+    this.completedAssessment = [];
 
+  //fROM fIREBASE
+    this.assessmentData =  [];
      this.appData.getAssessments().then(
        assessmentData => {
        this.assessmentData = assessmentData;
@@ -101,69 +107,47 @@ export class DynamicFormComponent implements OnInit {
 
     let authData = JSON.parse(localStorage.getItem("firebase:authUser:AIzaSyDbyyqecHuX45qTnEw7v9rUW7SbTSeKJ30:[DEFAULT]"));
     let uid = authData.uid;
-
-
     console.log(this.assessmentData);
    // this.addObservable = this.af.database.list('/users/' + uid + '/' + formKey );
+    console.log(formData);
 
    this.addObservable = this.af.database.list('/users/' + uid + '/assessments/');
-   let keyWrappedFormData = '/' + formKey +'/'+ formData;
-   this.addObservable.push( keyWrappedFormData ).then((snap) => {
+   let keyWrappedFormData =  formData;
+   this.addObservable.push(formData[0]).then((snap) => {
           let currentKey = snap.key;
-          let assessmentKey = this.assessmentData.filter((filter) => {
-             return filter.key === currentKey;
-          });
-          if( currentKey !== assessmentKey){
-            firebase.database()
-            .ref('/users/' + uid + '/assessments/' + currentKey )
-            .update({
-               key: currentKey
-             });
-          }
-          if( currentKey == assessmentKey){
-                if( formKey == 'basicInfo'){
-                       firebase.database()
-                       .ref('/users/' + uid + '/assessments/' + currentKey )
-                       .update({
-                          basicInfo: formData
-                        });
-                          let pushJSONString = JSON.stringify(formData);
-                          console.log( snap.key);
-                          let snapKey = snap.key;
-                          let toast = this.toastCtrl.create({
-                            message:  ' Added \n ' + formKey,
-                            duration: 4000,
-                            position: 'middle',
-                            cssClass: "toast-message"
-                          });
-                          toast.present();
-                }
-                if( formKey == 'constituents'){
-                       firebase.database()
-                       .ref('/users/' + uid + '/assessments/' + currentKey )
-                       .update({
-                          constituents: formData
-                        });
-                          let pushJSONString = JSON.stringify(formData);
-                          console.log( snap.key);
-                          let snapKey = snap.key;
-                          let toast = this.toastCtrl.create({
-                            message:  ' Added \n ' + formKey,
-                            duration: 4000,
-                            position: 'middle',
-                            cssClass: "toast-message"
-                          });
-                          toast.present();
-                }
-          }
-
+          // let assessmentKey = this.assessmentData.filter((filter) => {
+          //    return filter.key === currentKey;
+          // });
+          // if( currentKey !== assessmentKey){
+          //   firebase.database()
+          //   .ref('/users/' + uid + '/assessments/' + currentKey )
+          //   .update({
+          //      key: currentKey
+          //    });
+          // }
+           firebase.database()
+           .ref('/users/' + uid + '/assessments/' + snap.key )
+           .update({
+              key: snap.key,
+              data: formData
+            });
+          // if( currentKey == assessmentKey){
+          //      firebase.database()
+          //        .ref('/users/' + uid + '/assessments/' + currentKey )
+          //        .update({
+          //           basicInfo: formData
+          //         });
+          //         let pushJSONString = JSON.stringify(formData);
+          //         console.log( snap.key);
+          //         let snapKey = snap.key;
+          // }
        }).catch((error) => {
-             let toast = this.toastCtrl.create({
-               message: 'Adding ' + formKey + ' \n Failed :( ' + error,
-               duration: 4000,
-               position: 'middle',
-               cssClass: "toast-message"
-             });
+           let toast = this.toastCtrl.create({
+             message: 'Adding ' + formKey + ' \n Failed :( ' + error,
+             duration: 4000,
+             position: 'middle',
+             cssClass: "toast-message"
+           });
    });
 
    // if( formKey == 'constituents'){
@@ -226,48 +210,81 @@ export class DynamicFormComponent implements OnInit {
          let currentData = { "basicInfo": this.payLoad };
          localStorage.removeItem("basicInfo");
          localStorage.setItem("basicInfo", JSON.stringify(this.payLoad) );
+         let toast = this.toastCtrl.create({
+            message:  ' Added \n ' + 'User Info',
+            duration: 3000,
+            position: 'middle',
+            cssClass: "toast-message"
+          });
+          toast.present();
      }
      if(formKey == "constituents"){
          // let conName = this.form.value[2];
-         this.addedConstituents.push( this.payLoad);
+         this.addedConstituents.push(this.payLoad);
          let currentData = { "constituents": this.payLoad };
          localStorage.setItem("constituents", JSON.stringify(this.addedConstituents) );
+
+        // To update global array to show current constituents
+         let eventsConstituentsData = JSON.parse(localStorage.getItem("constituents"));
+         this.events.publish("constituents", eventsConstituentsData );
+         // clear form
+         this.form.reset()
+         let toast = this.toastCtrl.create({
+            message:  'Added \n ' + 'Constituent',
+            duration: 3000,
+            position: 'middle',
+            cssClass: "toast-message"
+          });
+          toast.present();
      }
      if(formKey == "assessmentTasks"){
        this.addedAssessmentTasks.push( this.payLoad);
        let currentData = { "assessmentTasks": this.payLoad };
        localStorage.setItem("assessmentTasks", JSON.stringify(this.addedAssessmentTasks) );
+
+        // To update global array to show current tasks
+         let eventsTasksData = JSON.parse(localStorage.getItem("assessmentTasks"));
+         this.events.publish("assessmentTasks", eventsTasksData );
+         // clear form
+         this.form.reset()
+         let toast = this.toastCtrl.create({
+            message:  'Added \n ' + 'Tasks',
+            duration: 3000,
+            position: 'middle',
+            cssClass: "toast-message"
+          });
+          toast.present();
      }
   }
 
- //  addEntry(formKey, formData) {
- //     // Parse any JSON previously stored in allEntries
- //     var existingData = JSON.parse(localStorage.getItem("currentData"));
- //     if(existingEntries == null) existingEntries = [];
- //     var entry = {
- //         formKey: formData
- //     };
- //     localStorage.setItem(formKey, JSON.stringify(entry));
- //     // Save allEntries back to local storage
- //     existingEntries.push(entry);
- //     localStorage.setItem("currentData", JSON.stringify(existingEntries));
- // }
-
   onSubmit() {
-        this.payLoad = JSON.stringify(this.form.value);
+      let formKey = this.questions[0].key;
+      let formRoot = this.questions[0].value;
+      this.payLoad = this.form.value;
 
-        let formData = this.form.value;
-        console.log(formData);
-        let formKey = this.questions[0].key;
-        let formRoot = this.questions[0].value;
+      if(formKey == "assessmentReview"){
+          let currentData = { "assessmentReview": this.payLoad };
+          localStorage.removeItem("assessmentReview");
+          localStorage.setItem("assessmentReview", JSON.stringify(this.payLoad) );
+      }
+      // Collect all assessment form data into one array object
+      this.completedAssessment.push(
+          {
+            "basicInfo": JSON.parse(localStorage.getItem("basicInfo")),
+            "constituents": JSON.parse(localStorage.getItem("constituents")),
+            "assessmentTasks": JSON.parse(localStorage.getItem("assessmentTasks")),
+            "assessmentReview": JSON.parse(localStorage.getItem("assessmentReview"))
+          }
+      );
+      let formData = this.completedAssessment;
+      console.log(formData);
 
-       this.formRootCheck(formRoot, formData, formKey );
+      this.formRootCheck(formRoot, formData, formKey );
 
-       this.viewCtrl.dismiss();
-       // this.navCtrl.push(AssessmentsPage);
+      //  this.viewCtrl.dismiss();
+      //  this.form.reset();
+      //  this.navCtrl.push(AssessmentsPage);
    }
-
-
 
    toggleGroup(group) {
        if (this.isGroupShown(group)) {

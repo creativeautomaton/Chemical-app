@@ -7,11 +7,16 @@
         </ion-input>
       </ion-item>
 
-      <ion-item *ngSwitchCase="'dropdown'"  [formGroup]="form">
+      <ion-item *ngSwitchCase="'dropdown'" [formGroup]="form">
         <ion-label floating>{{question.label}}</ion-label>
         <ion-select [formControlName]="question.key" [id]="question.key" >
             <ion-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</ion-option>
         </ion-select>
+      </ion-item>
+
+      <ion-item *ngSwitchCase="'checkbox'" [formGroup]="form" >
+          <ion-label>{{question.label}}</ion-label>
+           <ion-checkbox checked="true" [formControlName]="question.key" [id]="question.key" ></ion-checkbox>
       </ion-item>
 
       <ion-item *ngSwitchCase="'date'"  [formGroup]="form">
@@ -23,17 +28,6 @@
         <ion-label floating>{{question.label}}</ion-label>
         <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"  [formControlName]="question.key"></ion-datetime>
       </ion-item>
-
-      <ion-list *ngSwitchCase="'checkbox'"  [formGroup]="form">
-            <ion-label floating>{{question.label}}</ion-label>
-            <ion-item *ngFor="let opt of question.options" >
-                <ion-label> {{opt.value}}</ion-label>
-                <ion-checkbox checked="false" [formControlName]="question.key"></ion-checkbox>
-                <ion-note item-right>
-                    {{opt.value}}
-                </ion-note>
-          </ion-item>
-      </ion-list>
 
        <ion-list *ngSwitchCase="'range'"  [formGroup]="form">
             <ion-label floating> {{question.label}} </ion-label>

@@ -40,15 +40,22 @@ $grid-padding-widths: (
 
 $base-color: #666;
 
-$colors: (
-  primary:   #444,
-  secondary: #444,
-  light:    lighten($base-color, 50%),
-  dark:     darken($base-color, 10%),
-  error-msg: darken($base-color, 10%),
-  danger: #327eff
-);
+// $colors: (
+//   primary:   #444,
+//   secondary: #444,
+//   light:    lighten($base-color, 50%),
+//   dark:     darken($base-color, 10%),
+//   error-msg: darken($base-color, 10%),
+//   danger: #327eff
+// );
 
+$colors: (
+  primary:    #343a45,
+  secondary:  #11565b,
+  danger:     #8f1818,
+  light:      #f4f4f4,
+  dark:       #223e47
+);
 
 
 $ionicons-font-path: "../assets/fonts";
@@ -80,11 +87,16 @@ $ionicons-font-path: "../assets/fonts";
     border-color: #333 !important;
     background: #444 !important;
 }
-$tabs-md-tab-text-color-active: #fcfa45 !important;
-$tabs-md-tab-color-active: #fcfa45 !important;
-$tabs-md-tab-icon-color-active: #fcfa45 !important;
-$tabs-md-background: #3468c2 !important;
-$tabs-md-tab-font-weight: bold;
+.tabs-md .tab-button[aria-selected="true"] {
+    padding: 0;
+    color: #343a45;
+    background: #0a393c; 
+}
+// $tabs-md-tab-text-color-active: #fcfa45 !important;
+// $tabs-md-tab-color-active: #fcfa45 !important;
+// $tabs-md-tab-icon-color-active: #fcfa45 !important;
+// $tabs-md-background: #3468c2 !important;
+// $tabs-md-tab-font-weight: bold;
 
 // $tabs-md-tab-color-inactive: #fff !important;
 

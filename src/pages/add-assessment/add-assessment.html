@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>New Task Assessment</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="light"></ion-icon>
+      </button>
+    <ion-title>New Assessment</ion-title>
     <!-- <ion-buttons end>
       <button ion-button (click)="dismiss()">
         <ion-icon name="close" color="light">Cancel</ion-icon>
@@ -20,9 +23,11 @@
 
 <ion-content padding>
     <ion-tabs [selectedIndex]="mySelectedIndex" tabsPlacement="top" tabsLayout="icon-top" color="secondary">
-     <ion-tab tabIcon="person" [root]="tab1Root"  tabTitle="Step 1"></ion-tab>
-     <ion-tab tabIcon="water" [root]="tab2Root"  tabTitle="Step 2"></ion-tab>
-     <ion-tab tabIcon="flash" [root]="tab3Root"  tabTitle="Step 3"></ion-tab>
+      <ion-tab tabIcon="person" [root]="tab1Root"  tabTitle="Step 1"></ion-tab>
+      <ion-tab tabIcon="water" [root]="tab2Root"  tabTitle="Step 2"></ion-tab>
+      <ion-tab tabIcon="flag" [root]="tab3Root"  tabTitle="Step 3"></ion-tab>
+      <ion-tab tabIcon="document" [root]="tab4Root"  tabTitle="Review"></ion-tab>
+
    </ion-tabs>
 
 

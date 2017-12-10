@@ -33,7 +33,7 @@ import { AssessmentDetailPage } from '../pages/assessment-detail/assessment-deta
 import { FormAssessmentBasicPage } from '../pages/form-assessment-basic/form-assessment-basic';
 import { FormConstituentsPage } from '../pages/form-constituents/form-constituents';
 import { FormAssessmentTasksPage } from '../pages/form-assessment-tasks/form-assessment-tasks';
-
+import { FormAssessmentReviewPage } from '../pages/form-review/form-review';
 
 //Providers
 import { AuthService } from '../providers/auth-service';
@@ -79,7 +79,8 @@ export const firebaseConfig = {
     AssessmentDetailPage,
     FormAssessmentBasicPage,
     FormConstituentsPage,
-    FormAssessmentTasksPage
+    FormAssessmentTasksPage,
+    FormAssessmentReviewPage
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp),
@@ -108,7 +109,8 @@ export const firebaseConfig = {
     AssessmentDetailPage,
     FormAssessmentBasicPage,
     FormConstituentsPage,
-     FormAssessmentTasksPage 
+    FormAssessmentTasksPage,
+    FormAssessmentReviewPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  AuthService, AppData, UserData, Storage]
 })

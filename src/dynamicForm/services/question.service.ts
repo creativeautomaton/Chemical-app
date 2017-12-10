@@ -550,7 +550,7 @@ export class AssessmentConstituentsQuestionService {
         key: 'cas',
         label: 'CAS#:',
         value: ' ',
-        required: false,
+        required: true,
         order: 2,
         section: 'Constituents Table',
         // header: true,
@@ -564,15 +564,20 @@ export class AssessmentConstituentsQuestionService {
         order: 2,
         section: 'Constituents Table'
       }),
-      new TextboxQuestion({
+      new DropdownQuestion({
         key: 'physicalState',
         label: 'Physical State:',
-        value: ' ',
-        required: false,
+        options: [
+          {key: 'solid',  value: 'solid'},
+          {key: 'liquid',  value: 'liquid'},
+          {key: 'gas',   value: 'gas'},
+          {key: 'plasma',  value: 'plasma'}
+        ],
+        required: true,
         order: 2,
         section: 'Constituents Table'
       }),
-      new TextboxQuestion({
+      new RangeQuestion({
         key: 'percentOfChemical',
         label: '% of chemical:',
         options: [
@@ -705,6 +710,48 @@ export class AssessmentTasksQuestionService {
       .then(() => this.getQuestions());
   }
 }
+
+export class AssessmentReviewQuestionService {
+  // Todo: get from a remote source of question metadata
+  getQuestions(): Promise<QuestionBase<any>[]> {
+
+    let questions: QuestionBase<any>[] = [
+
+       new QuestionID ({
+            key: 'assessmentReview',
+            value: 'assessmentReview',
+            action: 'submit'
+       }),
+        new CheckboxQuestion({
+           key: 'AssesmentTerms',
+           value: 'accepted',
+           label: 'I accept the Terms and Conditions of this Assessment', 
+           section: 'Working Conditions'
+         }),
+        // new CheckboxQuestion({
+        //     key: 'reviewAcceptance2',
+        //     label: 'Confirmation2',
+        //     options: [{
+        //         key: 'accepted6',  value: 'true5'
+        //     }],
+        //     value: 'true',
+        //     order: 2,
+        //     required: false,
+        //     section: 'Task Table'
+        //  }),
+
+  ];
+
+  return Promise.resolve(questions.sort((a, b) => a.order - b.order));
+}
+
+  getAssessmentReviewQuestions(): Promise<QuestionBase<any>[]> {
+    return new Promise<QuestionBase<any>[]>(resolve =>
+      setTimeout(resolve, 1350)) // delay 2 seconds
+      .then(() => this.getQuestions());
+  }
+}
+
 //       // Exposure Limits - Within the Constituents Table
 //       //ACGIH
 //       new TextboxQuestion({

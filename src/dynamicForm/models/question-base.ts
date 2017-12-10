@@ -35,4 +35,5 @@ export class QuestionBase<T>{
     this.headerTitle = options.headerTitle || '';
     this.action = options.action || '';
   }
+      
 }
