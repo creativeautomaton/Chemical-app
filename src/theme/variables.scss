@@ -90,11 +90,15 @@ $ionicons-font-path: "../assets/fonts";
 .tabs-md .tab-button[aria-selected="true"] {
     padding: 0;
     color: #343a45;
-    background: #0a393c; 
+    background: #0a393c;
+}
+.tabs-md .tab-button[aria-selected="true"] {
+    padding: 0;
+    color: #fff;
 }
 // $tabs-md-tab-text-color-active: #fcfa45 !important;
-// $tabs-md-tab-color-active: #fcfa45 !important;
-// $tabs-md-tab-icon-color-active: #fcfa45 !important;
+$tabs-md-tab-color-active: #fff;
+$tabs-md-tab-icon-color-active: #fff;
 // $tabs-md-background: #3468c2 !important;
 // $tabs-md-tab-font-weight: bold;
 

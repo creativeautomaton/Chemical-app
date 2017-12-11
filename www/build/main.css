@@ -4731,6 +4731,11 @@
   background: #0a393c;
 }
 
+.tabs-md .tab-button[aria-selected="true"] {
+  padding: 0;
+  color: #fff;
+}
+
 ion-action-sheet {
   position: absolute;
   top: 0;
@@ -16963,7 +16968,7 @@ ion-spinner.spinner-paused svg {
 
 .tabs-md .tab-button[aria-selected=true] {
   padding: 0;
-  color: #343a45;
+  color: #fff;
 }
 
 .tabs-md .tab-button-text {
@@ -17010,7 +17015,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-  color: #343a45;
+  color: #fff;
   -webkit-transform: translate3d(0, -2px, 0);
   transform: translate3d(0, -2px, 0);
 }
@@ -17044,7 +17049,7 @@ ion-spinner.spinner-paused svg {
   display: block;
   width: 1px;
   height: 2px;
-  background: #343a45;
+  background: #fff;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-transform-origin: 0 0;
