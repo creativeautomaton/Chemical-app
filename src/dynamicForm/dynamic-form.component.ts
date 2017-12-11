@@ -1,14 +1,20 @@
-import { Component, Input, OnInit }  from '@angular/core';
+import {  Component, Input, OnInit }  from '@angular/core';
 import { FormGroup }                 from '@angular/forms';
 import { QuestionBase }              from './models/question-base';
 import { QuestionControlService }    from './services/question-control.service';
-import { NavController, NavParams, ModalController, ToastController, ViewController, Events } from 'ionic-angular';
+import {
+  NavController, NavParams, ModalController,
+  ToastController, ViewController, Events
+} from 'ionic-angular';
 
 import { AppData } from '../providers/app-data';
 import { UserData } from '../providers/user-data';
 import { ChemicalsPage } from '../pages/chemicals/chemicals';
 import { AssessmentsPage } from '../pages/assessments/assessments';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { FormConstituentsPage } from '../pages/form-constituents/form-constituents';
+import { AddAssessmentPage  } from '../pages/add-assessment/add-assessment';
+
 
 //Angularfire2
 import { AngularFire, FirebaseObjectObservable, FirebaseListObservable  } from 'angularfire2';
@@ -39,6 +45,7 @@ export class DynamicFormComponent implements OnInit {
     private qcs: QuestionControlService,
      public toastCtrl: ToastController,
      public navCtrl: NavController,
+     public navParams: NavParams,
      public appData: AppData,
      public userData: UserData,
      public modalCtrl: ModalController,
@@ -105,7 +112,7 @@ export class DynamicFormComponent implements OnInit {
   //    });
   // }
 
-  sendFirebaseUser(formData, formKey){ 
+  sendFirebaseUser(formData, formKey){
     let authData = JSON.parse(localStorage.getItem("firebase:authUser:AIzaSyDbyyqecHuX45qTnEw7v9rUW7SbTSeKJ30:[DEFAULT]"));
     let uid = authData.uid;
     // this.addObservable = this.af.database.list('/users/' + uid + '/' + formKey );
@@ -154,6 +161,8 @@ export class DynamicFormComponent implements OnInit {
             cssClass: "toast-message"
           });
           toast.present();
+          this.form.reset();
+          this.navCtrl.parent.select(1);
      }
      if(formKey == "constituents"){
          // let conName = this.form.value[2];
@@ -173,6 +182,7 @@ export class DynamicFormComponent implements OnInit {
             cssClass: "toast-message"
           });
           toast.present();
+          this.navCtrl.parent.select(2);
      }
      if(formKey == "assessmentTasks"){
        this.addedAssessmentTasks.push( this.payLoad);
@@ -191,6 +201,7 @@ export class DynamicFormComponent implements OnInit {
             cssClass: "toast-message"
           });
           toast.present();
+          this.navCtrl.parent.select(3);
      }
   }
 
@@ -218,9 +229,10 @@ export class DynamicFormComponent implements OnInit {
 
       this.formRootCheck(formRoot, formData, formKey );
 
-      //  this.viewCtrl.dismiss();
-      //  this.form.reset();
-      //  this.navCtrl.push(AssessmentsPage);
+       this.form.reset();
+       // this.navCtrl.pop(AddAssessmentPage);
+       // this.navCtrl.push(AssessmentsPage);
+       this.viewCtrl.dismiss(AddAssessmentPage);
    }
 
    toggleGroup(group) {

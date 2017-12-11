@@ -93,17 +93,8 @@ export class AssessmentsPage {
       });
       console.log(viewData);
 
-      // let modal = this.modalCtrl.create(AssessmentDetailPage, {assessmentDetail: assessmentData});
-      //   modal.present();
-
-          // this.appData.getAssessments().then(
-          //   assessmentData => {
-          //     this.assessments = assessmentData;
-          //    //  this.assessments = assessmentData.filter((filter) => {
-          //    //     return filter.type === "device";
-          //    //  });
-          //     console.log(assessmentData);
-          //   });
+      let modal = this.modalCtrl.create(AssessmentDetailPage);
+      modal.present();
     }
 
     toggleGroup(group) {
