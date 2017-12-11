@@ -33,6 +33,7 @@ export class DynamicFormComponent implements OnInit {
   addedAssessmentTasks: any[];
   assessmentTerm: boolean;
   completedAssessment: any[];
+  currentKey: any;
 
   constructor(
     private qcs: QuestionControlService,
@@ -57,6 +58,7 @@ export class DynamicFormComponent implements OnInit {
     this.addedConstituents = [];
     this.addedAssessmentTasks = [];
     this.completedAssessment = [];
+    this.currentKey = '';
 
   //fROM fIREBASE
     this.assessmentData =  [];
@@ -103,104 +105,39 @@ export class DynamicFormComponent implements OnInit {
   //    });
   // }
 
-  sendFirebaseUser(formData, formKey){
-
+  sendFirebaseUser(formData, formKey){ 
     let authData = JSON.parse(localStorage.getItem("firebase:authUser:AIzaSyDbyyqecHuX45qTnEw7v9rUW7SbTSeKJ30:[DEFAULT]"));
     let uid = authData.uid;
-    console.log(this.assessmentData);
-   // this.addObservable = this.af.database.list('/users/' + uid + '/' + formKey );
-    console.log(formData);
+    // this.addObservable = this.af.database.list('/users/' + uid + '/' + formKey );
 
    this.addObservable = this.af.database.list('/users/' + uid + '/assessments/');
    let keyWrappedFormData =  formData;
-   this.addObservable.push(formData[0]).then((snap) => {
-          let currentKey = snap.key;
-          // let assessmentKey = this.assessmentData.filter((filter) => {
-          //    return filter.key === currentKey;
-          // });
-          // if( currentKey !== assessmentKey){
-          //   firebase.database()
-          //   .ref('/users/' + uid + '/assessments/' + currentKey )
-          //   .update({
-          //      key: currentKey
-          //    });
-          // }
-           firebase.database()
-           .ref('/users/' + uid + '/assessments/' + snap.key )
-           .update({
-              key: snap.key,
-              data: formData
-            });
-          // if( currentKey == assessmentKey){
-          //      firebase.database()
-          //        .ref('/users/' + uid + '/assessments/' + currentKey )
-          //        .update({
-          //           basicInfo: formData
-          //         });
-          //         let pushJSONString = JSON.stringify(formData);
-          //         console.log( snap.key);
-          //         let snapKey = snap.key;
-          // }
-       }).catch((error) => {
-           let toast = this.toastCtrl.create({
-             message: 'Adding ' + formKey + ' \n Failed :( ' + error,
-             duration: 4000,
-             position: 'middle',
-             cssClass: "toast-message"
-           });
-   });
-
-   // if( formKey == 'constituents'){
-   //   this.addObservable = this.af.database.list('/users/' + uid + '/assessments/');
-   //
-   //   let keyWrappedFormData = '/' + formKey +'/'+ formData;
-   //   this.addObservable.push( keyWrappedFormData ).then((snap) => {
-   //       firebase.database()
-   //       .ref('/users/' + uid + '/assessments/' + snap.key )
-   //       .update({
-   //          key: snap.key,
-   //          constituents: formData
-   //        });
-   //          let pushJSONString = JSON.stringify(formData);
-   //
-   //          let toast = this.toastCtrl.create({
-   //            message:  ' Added \n ' + formKey,
-   //            duration: 4000,
-   //            position: 'middle',
-   //            cssClass: "toast-message"
-   //          });
-   //          toast.present();
-   //     }).catch((error) => {
-   //           let toast = this.toastCtrl.create({
-   //             message: 'Adding ' + formKey + ' \n Failed :( ' + error,
-   //             duration: 4000,
-   //             position: 'middle',
-   //             cssClass: "toast-message"
-   //           });
-   //    });
-   // }
-
-
-   // this.addObservable.push( formData ).then((snap) => {
-   //     firebase.database().ref('/users/' + uid + '/' + formKey + '/' + snap.key ).update({ key: snap.key});
-   //        let pushJSONString = JSON.stringify(formData);
-   //
-   //        let toast = this.toastCtrl.create({
-   //          message:  ' Added \n ' + formKey,
-   //          duration: 4000,
-   //          position: 'middle',
-   //          cssClass: "toast-message"
-   //        });
-   //        toast.present();
-   //   }).catch((error) => {
-   //         let toast = this.toastCtrl.create({
-   //           message: 'Adding ' + formKey + ' \n Failed :( ' + error,
-   //           duration: 4000,
-   //           position: 'middle',
-   //           cssClass: "toast-message"
-   //         });
-   //  });
-
+     this.addObservable.push( {
+        basicInfo: formData[0]['basicInfo'],
+        assessmentReview: formData[0]['assessmentReview']
+      }).then((snap) => {
+         firebase.database().ref('/users/' + uid + '/assessments/' + snap.key )
+         .update({
+            key: snap.key,
+            constituents: ' ',
+            tasks: ' '
+          });
+          for (var constituent of  formData[0]['constituents']) {
+              firebase.database().ref('/users/' + uid + '/assessments/' + snap.key + '/constituents/' )
+              .push(constituent);
+          }
+          for (var task of  formData[0]['assessmentTasks']) {
+              firebase.database().ref('/users/' + uid + '/assessments/' + snap.key + '/tasks/' )
+              .push(task);
+          }
+         }).catch((error) => {
+             let toast = this.toastCtrl.create({
+               message: 'Adding ' + formKey + ' \n Failed :( ' + error,
+               duration: 4000,
+               position: 'middle',
+               cssClass: "toast-message"
+             });
+     });
   }
   onSave() {
      let formKey = this.questions[0].key;

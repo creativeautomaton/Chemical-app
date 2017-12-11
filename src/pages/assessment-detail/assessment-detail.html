@@ -29,10 +29,10 @@
               <ion-col >
                 <ion-row  >
                   <ion-col col-sm-12 col-lg-9>
-                    <h1 item-left  > {{assessment.title}} </h1>
+                    <h1 item-left  > {{assessment.basicInfo.title}} </h1>
                   </ion-col>
                    <ion-col col-sm-12 col-lg-3>
-                     <h3 item-right > {{assessment.date}} </h3>
+                     <h3 item-right > {{assessment.basicInfo.date}} </h3>
                    </ion-col>
 
                 </ion-row>
@@ -43,7 +43,7 @@
                 </ion-row>
                 <ion-row>
                       <ion-note item-start>
-                         <strong> Date: </strong> {{ assessment.date }}
+                         <strong> Date: </strong> {{ assessment.basicInfo.date }}
                        </ion-note>
                 </ion-row>
               </ion-col>
@@ -65,8 +65,8 @@
                             <h3> <strong> Location: </strong> </h3>
                          </ion-col>
                          <ion-col col-sm-12 col-lg-6 >
-                          <p> {{assessment.company}} </p>
-                          <p> {{assessment.location}}</p>
+                          <p> {{assessment.basicInfo.company}} </p>
+                          <p> {{assessment.basicInfo.location}}</p>
                         </ion-col>
                         <hr />
                       </ion-row>
@@ -81,9 +81,9 @@
                               <h3> <strong> Building: </strong> </h3>
                            </ion-col>
                            <ion-col col-sm-12 col-lg-6 >
-                                <p> {{assessment.department}}</p>
-                                <p> {{assessment.section}}</p>
-                                <p> {{assessment.building}}</p>
+                                <p> {{assessment.basicInfo.department}}</p>
+                                <p> {{assessment.basicInfo.section}}</p>
+                                <p> {{assessment.basicInfo.building}}</p>
                            </ion-col>
 
                         </ion-row>

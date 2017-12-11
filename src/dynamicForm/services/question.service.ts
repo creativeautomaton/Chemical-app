@@ -534,32 +534,29 @@ export class AssessmentBasicInfoQuestionService {
 }
 
 export class AssessmentConstituentsQuestionService {
-
-  // Todo: get from a remote source of question metadata
   getQuestions(): Promise<QuestionBase<any>[]> {
 
     let questions: QuestionBase<any>[] = [
 
        new QuestionID ({
           key: 'constituents',
-          value: 'constituents'
+          value: 'constituents',
+          action: 'add'
        }),
 
 // Constituents Table
       new TextboxQuestion({
         key: 'cas',
         label: 'CAS#:',
-        value: ' ',
+        value: '',
         required: true,
         order: 2,
-        section: 'Constituents Table',
-        // header: true,
-        // headerTitle: 'Constituents Table'
+        section: 'Constituents Table'
       }),
       new TextboxQuestion({
         key: 'constituentName',
         label: 'Constituent Name:',
-        value: ' ',
+        value: '',
         required: false,
         order: 2,
         section: 'Constituents Table'
@@ -593,9 +590,6 @@ export class AssessmentConstituentsQuestionService {
         order: 2,
         section: 'Constituents Table'
       }),
-      new QuestionID ({
-         action: 'add'
-      }),
     ];
 
     return Promise.resolve(questions.sort((a, b) => a.order - b.order));
@@ -616,11 +610,9 @@ export class AssessmentTasksQuestionService {
 
        new QuestionID ({
             key: 'assessmentTasks',
-            value: 'assessmentTasks'
+            value: 'assessmentTasks',
+            action: 'add'
           }),
-        new QuestionID ({
-           action: 'add'
-        }),
        // Task Table
         //Task
           // Material Fabrication
@@ -725,7 +717,7 @@ export class AssessmentReviewQuestionService {
         new CheckboxQuestion({
            key: 'AssesmentTerms',
            value: 'accepted',
-           label: 'I accept the Terms and Conditions of this Assessment', 
+           label: 'I accept the Terms and Conditions of this Assessment',
            section: 'Working Conditions'
          }),
         // new CheckboxQuestion({
